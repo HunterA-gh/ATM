@@ -1,8 +1,12 @@
 import java.util.Scanner;
 
+
 public class Console {
     public static void main(String[] args) {
+
+
         bootUpATM();
+
     }
 
     public static void bootUpATM() {
@@ -17,6 +21,8 @@ public class Console {
         }
         if (inputOnHomeScreen == 2) {
             //createNewAccount();
-        }
+
+            System.out.println("Caesar eats poop");
+        }   
     }
 }
