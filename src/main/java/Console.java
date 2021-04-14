@@ -18,12 +18,11 @@ public class Console {
         System.out.print(": ");
         int inputOnHomeScreen = atmScanner.nextInt();
         if (inputOnHomeScreen == 1) {
-            Accounts.logIntoExistingAccount();
+            UserFunctions.logIntoExistingAccount();
         }
         if (inputOnHomeScreen == 2) {
-            Accounts.createNewAccount();
-            afterCreateNewAccountScreen();
 
+            UserFunctions.createNewAccount();
         }   
     }
 

@@ -1,5 +1,12 @@
 public class Checking extends AccountTypes {
-    private double inAccount;
+
+
+    public Checking(double inAccount) {
+        super(inAccount);
+    }
+
+    public void giveTransfer(int account, double amount) {
+        if (account == 2 && getInAccount() >= amount) {
 
 
     /*
@@ -8,8 +15,7 @@ public class Checking extends AccountTypes {
         if(account == "savings" && getInAccount() >= amount){
             inAccount -= amount;
             //Get Savings
-        }else if(account == "investment" && getInAccount() >= amount){
-            inAccount -= amount;
+        }else if(account == 3 && getInAccount() >= amount){
             //Get Investment
         }else{
             System.out.println("Invalid account");
@@ -18,5 +24,7 @@ public class Checking extends AccountTypes {
     }
 
      */
-}
+        }
 
+    }
+}
