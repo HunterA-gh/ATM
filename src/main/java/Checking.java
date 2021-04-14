@@ -1,11 +1,19 @@
 public class Checking extends AccountTypes {
 
+
     public Checking(double inAccount) {
         super(inAccount);
     }
 
     public void giveTransfer(int account, double amount){
         if(account == 2 && getInAccount() >= amount){
+
+
+    /*
+    @Override
+    public void giveTransfer(String account, double amount){
+        if(account == "savings" && getInAccount() >= amount){
+            inAccount -= amount;
             //Get Savings
         }else if(account == 3 && getInAccount() >= amount){
             //Get Investment
@@ -14,5 +22,7 @@ public class Checking extends AccountTypes {
         }
         System.out.println(amount+" hase been transferred to "+account);
     }
+
+     */
 }
 

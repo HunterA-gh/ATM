@@ -14,4 +14,5 @@ public class Investment extends AccountTypes{
         }
         System.out.println(amount+" hase been transferred to "+account);
     }
+
 }
