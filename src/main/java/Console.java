@@ -21,8 +21,8 @@ public class Console {
             UserFunctions.logIntoExistingAccount();
         }
         if (inputOnHomeScreen == 2) {
-
             UserFunctions.createNewAccount();
+            afterCreateNewAccountScreen();
         }   
     }
 
@@ -33,6 +33,7 @@ public class Console {
         System.out.printf("%5s-%5s\n", "[1] ", " Create a new Checking account.");
         System.out.printf("%5s-%5s\n", "[2] ", " Create a new Savings account.");
         System.out.printf("%5s-%5s\n", "[3] ", " Create a new Investment account.");
+        System.out.printf("%5s-%5s\n", "[4] ", " Return to Main Menu.");
         int inputOnNewAccountUserScreen = atmScanner.nextInt();
         switch (inputOnNewAccountUserScreen) {
             case 1: {
@@ -46,6 +47,9 @@ public class Console {
             case 3: {
                 //createnewinvetsmentaccount();
                 break;
+            }
+            case 4: {
+                bootUpATM();
             }
         }
 
