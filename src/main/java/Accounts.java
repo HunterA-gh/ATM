@@ -49,12 +49,15 @@ public class Accounts {
                 System.out.println("Congrats you've successfully made a new Account.");
                 Users users = new Users(username, password);
                 usersWithAccounts.add(users);
-                logIntoExistingAccount();
                 count++;
 
                 break;
             }
+
+
         }
+
+
     }
 }
 //        if (password.equals(confirmPass)) {
