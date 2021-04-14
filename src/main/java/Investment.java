@@ -1,20 +1,17 @@
 public class Investment extends AccountTypes{
-    private double inAccount;
 
-    @Override
-    public double withdraw(double amount){
-        inAccount -= amount;
-        return inAccount;
+    public Investment(double inAccount) {
+        super(inAccount);
     }
 
-    @Override
-    public double deposit(double amount){
-        inAccount += amount;
-        return inAccount;
-    }
-
-    @Override
-    public double getInAccount() {
-        return inAccount;
+    public void giveTransfer(int account, double amount) {
+        if(account == 1 && getInAccount() >= amount){
+            //Get Savings
+        }else if(account == 2 && getInAccount() >= amount){
+            //Get Investment
+        }else{
+            System.out.println("Invalid account");
+        }
+        System.out.println(amount+" hase been transferred to "+account);
     }
 }

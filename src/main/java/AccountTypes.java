@@ -1,22 +1,21 @@
 public abstract class AccountTypes {
     private double inAccount;
 
-    public double withdraw(double amount){
+    public AccountTypes(double inAccount){
+        this.inAccount = inAccount;
+    }
+
+    public void withdraw(double amount){
         inAccount -= amount;
-        return inAccount;
     }
 
-    public double deposit(double amount){
+    public void deposit(double amount){
         inAccount += amount;
+    }
+
+    public double getInAccount(){
         return inAccount;
     }
 
-    public double getInAccount() {
-        return inAccount;
-    }
-
-    public void giveTransfer(String account, double amount){
-    }
-
-    //public void rec
+    public abstract void giveTransfer(int account, double amount);
 }
