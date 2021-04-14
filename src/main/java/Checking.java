@@ -1,5 +1,9 @@
-public class Checking extends AccountTypes {
+import java.util.ArrayList;
 
+public class Checking extends AccountTypes {
+    private int accountNumber;
+    private double balance;
+    private ArrayList<String> transactionHistory = new ArrayList<String>();
 
     public Checking(double inAccount) {
         super(inAccount);
@@ -27,4 +31,6 @@ public class Checking extends AccountTypes {
         }
 
     }
+
+
 }

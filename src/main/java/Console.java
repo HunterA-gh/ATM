@@ -49,4 +49,8 @@ public class Console {
                 "                                                                                 \n" +
                 "                                                                                 \n");
     }
+
+    public static double twoDecimalPlaces(double moveTwoDecimalPlace) {
+        return Math.floor(moveTwoDecimalPlace * 100) / 100;
+    }
 }
