@@ -17,12 +17,11 @@ public class Console {
         Scanner atmScanner = new Scanner(System.in);
         int inputOnHomeScreen = atmScanner.nextInt();
         if (inputOnHomeScreen == 1) {
-            //logIntoExistingAccount();
+            Accounts.logIntoExistingAccount();
         }
         if (inputOnHomeScreen == 2) {
-            //createNewAccount();
+            Accounts.createNewAccount();
 
-            System.out.println("Caesar eats poop");
         }   
     }
 }
