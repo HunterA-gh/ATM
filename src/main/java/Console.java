@@ -26,6 +26,20 @@ public class Console {
         }   
     }
 
+    public static void afterCreateNewAccountScreen() {
+        // after creating a new account on the bootUpATM
+        // this will be the menu the user can interact with
+        System.out.println("Welcome to your new account." + "\n What would you like to do?");
+
+
+    }
+
+    public static void afterLogIntoExistingAccountScreen() {
+        // after logging into an existing account
+        // this will be the menu the user can interact with
+    }
+}
+
     public static void bootUpLogo() {
         System.out.println("\n" +
                 "                                                                                 \n" +
