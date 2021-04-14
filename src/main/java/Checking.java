@@ -5,8 +5,8 @@ public class Checking extends AccountTypes {
         super(inAccount);
     }
 
-    public void giveTransfer(int account, double amount){
-        if(account == 2 && getInAccount() >= amount){
+    public void giveTransfer(int account, double amount) {
+        if (account == 2 && getInAccount() >= amount) {
 
 
     /*
@@ -24,5 +24,7 @@ public class Checking extends AccountTypes {
     }
 
      */
-}
+        }
 
+    }
+}

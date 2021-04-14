@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Accounts {
+public class UserFunctions {
 
     static Scanner scanner = new Scanner(System.in);
     private static ArrayList<Users> usersWithAccounts = new ArrayList<>();
