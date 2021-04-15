@@ -6,27 +6,22 @@ import java.util.Scanner;
 public class UserFunctions {
 
     static Scanner scanner = new Scanner(System.in);
-    private static Map<String, String> usersWithAccounts = new HashMap<>();
+    private static Map<String, String> users = new HashMap<>();
 
     public static void logIntoExistingAccount() {
         System.out.println("Please enter your Username : ");
         String confirmUsername = scanner.nextLine();
-        if (usersWithAccounts.containsKey(confirmUsername)) {
+        if (users.containsKey(confirmUsername)) {
             System.out.println("Hello " + confirmUsername);
             System.out.println("Please enter your password : ");
             String checkAccountPassword = scanner.nextLine();
-            if (usersWithAccounts.get(confirmUsername).contains(checkAccountPassword)) {
+            if (users.get(confirmUsername).contains(checkAccountPassword)) {
                 System.out.println("Welcome back to your account");
                 Console.afterLogIntoExistingAccountScreen();
 
-            } else if (!(usersWithAccounts.get(confirmUsername).contains(confirmUsername))) {
-                System.out.println("Sorry no user exists with this username");
+            } else if (!(users.get(confirmUsername).contains(confirmUsername))) {
+                System.out.println("Sorry username or password is incorrect");
                 //System.exit(0);
-
-            } else if (!(usersWithAccounts.get(checkAccountPassword).contains(checkAccountPassword))) {
-                System.out.println("Sorry that password is incorrect");
-                //System.exit(0);
-
             }
         } //return;
     }
@@ -68,9 +63,9 @@ public class UserFunctions {
                 confirmPass = scanner.nextLine();
             } else {
                 System.out.println("Congrats you've successfully made a new Account.");
-                Users users = new Users(username, password);
+                Users user = new Users(username, password);
 
-                usersWithAccounts.put(username, password);
+                UserFunctions.users.put(username, password);
                 count++;
 
                 //usersWithAccounts.add(users);
@@ -81,10 +76,11 @@ public class UserFunctions {
         }
 
     }
+
     public static Savings makeAccountSavingsAccount(Users users) {
-        for(int i =0;i<usersWithAccounts.size();i++)
-            if(usersWithAccounts.containsKey(users)){
-                logIntoExistingAccount();
+        for(int i = 0; i< UserFunctions.users.size(); i++)
+            if(UserFunctions.users.containsKey(users)){
+//                logIntoExistingAccount();
                 System.out.println("How much do you want to deposit into account?: ");
                 Scanner userInputer = new Scanner(System.in);
                 double initialDeposit =  userInputer.nextDouble();
@@ -103,9 +99,10 @@ public class UserFunctions {
           double initialDeposit =  userInputer.nextDouble();
             return new Savings(initialDeposit);
     }
+
     public static Investment makeAccountInvestmentaccount(Users users){
-        for(int i =0;i>usersWithAccounts.size();i++){
-            if(usersWithAccounts.containsKey(users)){
+        for(int i = 0; i> UserFunctions.users.size(); i++){
+            if(UserFunctions.users.containsKey(users)){
                 logIntoExistingAccount();
                 System.out.println("How much do you want to deposit into account?: ");
                 Scanner userInput = new Scanner(System.in);
@@ -119,9 +116,9 @@ public class UserFunctions {
         }return null;
     }
     public static Checking makeAccountCheckingAccount(Users users) {
-        for (int i = 0; i < usersWithAccounts.size(); i++) {
+        for (int i = 0; i < UserFunctions.users.size(); i++) {
 
-            if (usersWithAccounts.containsKey(users)) {
+            if (UserFunctions.users.containsKey(users)) {
 
                 logIntoExistingAccount();
                 System.out.println("How much do you want to deposit into account?: ");
@@ -136,12 +133,10 @@ public class UserFunctions {
     }
 
 
-    public static Map<String, String> getUsersWithAccounts() {
-        return usersWithAccounts;
+    public static Map<String, String> getUsers() {
+        return users;
     }
 }
-
-
 
 
 //public static Investment makeAccountInvestmentAccount(Users newUser,){
