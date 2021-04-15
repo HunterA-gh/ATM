@@ -24,7 +24,6 @@ public abstract class AccountTypes {
         return false;
     }
 
-
     public boolean deposit(double amount) {
         amount = Console.twoDecimalPlaces(amount);
         if(amount > 0) {
@@ -37,16 +36,18 @@ public abstract class AccountTypes {
         }
     }
 
-
     public double getBalance(){
         return balance;
     }
 
-    public void printBalance(){
+    public void printBalance() {
         System.out.println(String.format("%-11s$%,.2f", "Balance:", getBalance()));
     }
 
-    public boolean transferTo(Account otherAccount, double amount) {
+    public abstract void giveTransfer(int account, double amount);
+
+
+    public boolean transferTo(AccountTypes otherAccount, double amount) {
         amount = Console.twoDecimalPlaces(amount);
         boolean validWithdraw = this.withdraw(amount);
         if(validWithdraw) {
@@ -71,4 +72,5 @@ public abstract class AccountTypes {
     public int getAccountNumber() {
         return accountNumber;
     }
+
 }
