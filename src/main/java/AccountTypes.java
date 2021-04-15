@@ -39,7 +39,7 @@ public abstract class AccountTypes {
     public double getBalance(){
         return balance;
     }
-
+//
     public boolean transferTo(AccountTypes otherAccount, double amount) {
         amount = Console.twoDecimalPlaces(amount);
         boolean validWithdraw = this.withdraw(amount);
