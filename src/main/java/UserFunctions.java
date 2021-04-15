@@ -127,6 +127,10 @@ public class UserFunctions {
     public static Map<String, String> getUsers() {
         return users;
     }
+
+    public static ArrayList<User> getUserArrayList() {
+        return userArrayList;
+    }
 }
 
 
