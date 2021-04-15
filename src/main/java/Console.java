@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -18,10 +17,10 @@ public class Console {
         System.out.print(": ");
         int inputOnHomeScreen = atmScanner.nextInt();
         if (inputOnHomeScreen == 1) {
-            UserFunctions.logIntoExistingAccount();
+            UserFunctions.logIntoExistingUserProfile();
         }
         if (inputOnHomeScreen == 2) {
-            UserFunctions.createNewAccount();
+            UserFunctions.createNewUserProfile();
             afterCreateNewAccountScreen();
         }
     }

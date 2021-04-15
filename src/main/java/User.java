@@ -1,4 +1,4 @@
-public class Users {
+public class User {
     private String username;
     private String password;
     private Investment investment;
@@ -6,7 +6,7 @@ public class Users {
     private Checking checking;
 
 
-    public Users(String username, String password) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
 

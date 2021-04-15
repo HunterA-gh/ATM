@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -7,8 +8,9 @@ public class UserFunctions {
 
     static Scanner scanner = new Scanner(System.in);
     private static Map<String, String> users = new HashMap<>();
+    private static ArrayList<User> userArrayList = new ArrayList<>();
 
-    public static void logIntoExistingAccount() {
+    public static void logIntoExistingUserProfile() {
         System.out.println("Please enter your Username : ");
         String confirmUsername = scanner.nextLine();
         if (users.containsKey(confirmUsername)) {
@@ -42,7 +44,7 @@ public class UserFunctions {
 //        }
 
 
-    public static void createNewAccount() {
+    public static void createNewUserProfile() {
         System.out.println("Please create a Username");
         String username = scanner.nextLine();
         //System.out.println("Your username is : " + username);
@@ -63,12 +65,9 @@ public class UserFunctions {
                 confirmPass = scanner.nextLine();
             } else {
                 System.out.println("Congrats you've successfully made a new Account.");
-                Users user = new Users(username, password);
-
+                User user = new User(username, password);
+                userArrayList.add(user);
                 UserFunctions.users.put(username, password);
-                count++;
-
-                //usersWithAccounts.add(users);
                 count++;
                 break;
             }
@@ -77,8 +76,8 @@ public class UserFunctions {
 
     }
 
-    public static Savings makeAccountSavingsAccount(Users users) {
-        for(int i = 0; i< UserFunctions.users.size(); i++)
+    public static Savings makeAccountSavingsAccount(User users) {
+        //for(int i = 0; i< UserFunctions.users.size(); i++)
             if(UserFunctions.users.containsKey(users)){
 //                logIntoExistingAccount();
                 System.out.println("How much do you want to deposit into account?: ");
@@ -87,7 +86,7 @@ public class UserFunctions {
                 //usersWithAccounts.(new Savings(initialDeposit));
 
             }else {
-                createNewAccount();
+                createNewUserProfile();
                 System.out.println("How much do you want to deposit into account?: ");
                 Scanner userInputer = new Scanner(System.in);
                 double initialDeposit =  userInputer.nextDouble();
@@ -100,10 +99,10 @@ public class UserFunctions {
             return new Savings(initialDeposit);
     }
 
-    public static Investment makeAccountInvestmentaccount(Users users){
+    public static Investment makeAccountInvestmentaccount(User users){
         for(int i = 0; i> UserFunctions.users.size(); i++){
             if(UserFunctions.users.containsKey(users)){
-                logIntoExistingAccount();
+                logIntoExistingUserProfile();
                 System.out.println("How much do you want to deposit into account?: ");
                 Scanner userInput = new Scanner(System.in);
                 double initialDeposit = userInput.nextDouble();
@@ -115,12 +114,12 @@ public class UserFunctions {
 
         }return null;
     }
-    public static Checking makeAccountCheckingAccount(Users users) {
+    public static Checking makeAccountCheckingAccount(User users) {
         for (int i = 0; i < UserFunctions.users.size(); i++) {
 
             if (UserFunctions.users.containsKey(users)) {
 
-                logIntoExistingAccount();
+                logIntoExistingUserProfile();
                 System.out.println("How much do you want to deposit into account?: ");
                 Scanner userInput = new Scanner(System.in);
                 double initialDeposit = userInput.nextDouble();
