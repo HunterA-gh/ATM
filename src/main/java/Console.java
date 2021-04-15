@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Console {
+public class Console extends Accounts {
 
     public static void main(String[] args) {
 
@@ -16,11 +16,14 @@ public class Console {
         Scanner atmScanner = new Scanner(System.in);
         int inputOnHomeScreen = atmScanner.nextInt();
         if (inputOnHomeScreen == 1) {
-            //logIntoExistingAccount();
+            logIntoExistingAccount();
         }
         if (inputOnHomeScreen == 2) {
-            //createNewAccount();
-            System.out.println("Caesar eats poop");
+            createNewAccount();
+            
         }
     }
+
+
+
 }

@@ -1,4 +1,5 @@
 public class Investment extends AccountTypes{
+
     private double inAccount;
 
     @Override

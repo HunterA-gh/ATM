@@ -1,4 +1,5 @@
 public class Savings extends AccountTypes {
+
     private double inAccount;
 
     @Override

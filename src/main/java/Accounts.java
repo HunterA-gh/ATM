@@ -57,12 +57,3 @@ public class Accounts {
         }
     }
 }
-//        if (password.equals(confirmPass)) {
-//            System.out.println("Thank you for confirming. Your new Password: " + confirmPass);
-//        } else {
-//            while (password.equals(confirmPass) == false) {
-//
-//            }
-//            System.out.println("Error. Passwords do not match. Please try again.");
-//            // call the method to put in a password again
-//        }

@@ -1,4 +1,5 @@
 public abstract class AccountTypes {
+
     private double inAccount;
 
     public double withdraw(double amount){
@@ -18,5 +19,5 @@ public abstract class AccountTypes {
     public void giveTransfer(String account, double amount){
     }
 
-    //public void rec
+
 }
