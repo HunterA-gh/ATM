@@ -131,3 +131,8 @@ public class Console {
                     "                                                                                 \n");
         }
     }
+
+    public static double twoDecimalPlaces(double moveTwoDecimalPlace) {
+        return Math.floor(moveTwoDecimalPlace * 100) / 100;
+    }
+}
