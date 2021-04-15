@@ -1,29 +1,44 @@
-import java.util.ArrayList;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class UserFunctions {
 
     static Scanner scanner = new Scanner(System.in);
-    private static ArrayList<Users> usersWithAccounts = new ArrayList<>();
+    private static Map<String, String> usersWithAccounts = new HashMap<>();
 
     public static void logIntoExistingAccount() {
-        System.out.println("Please enter your Username: ");
-        String username = scanner.nextLine();
-        System.out.println("Username: " + username);
-        if (username.equals(usersWithAccounts.contains(username))) {
-            System.out.println("Please enter your password: ");
-        } else if (username.equals(usersWithAccounts.contains(username) == false)){
-            System.out.println("error");
-            }
-        String password = scanner.nextLine();
-            if (password.equals(usersWithAccounts.contains(password)))
-            {
-                System.out.println("Welcome back " + username + ". What would you like to do?");
-            }
-            else {
-                System.out.println("error.");
+        System.out.println("Please enter your Username : ");
+        String confirmUsername = scanner.nextLine();
+        if (usersWithAccounts.containsKey(confirmUsername)) {
+            System.out.println("Hello " + confirmUsername);
+            System.out.println("Please enter your password : ");
+            String checkAccountPassword = scanner.nextLine();
+            if (usersWithAccounts.get(confirmUsername) != null && usersWithAccounts.get(confirmUsername).contains(checkAccountPassword)) {
+                System.out.println("Welcome back to your account");
+            } else if (!(usersWithAccounts.containsKey(confirmUsername))) {
+                System.out.println("Sorry no user exists with this username");
+            } else if (!(usersWithAccounts.get(confirmUsername).contains(checkAccountPassword))) {
+                System.out.println("Sorry ");
             }
         }
+    }
+//        System.out.println("Username: " + username);
+//        if (username.equals(usersWithAccounts.contains(username))) {
+//            System.out.println("Please enter your password: ");
+//        } else if (username.equals(usersWithAccounts.contains(username) == false)){
+//            System.out.println("error");
+//            }
+//        String password = scanner.nextLine();
+//            if (password.equals(usersWithAccounts.contains(password)))
+//            {
+//                System.out.println("Welcome back " + username + ". What would you like to do?");
+//            }
+//            else {
+//                System.out.println("error.");
+//            }
+//        }
 
 
     public static void createNewAccount() {
@@ -48,9 +63,8 @@ public class UserFunctions {
             } else {
                 System.out.println("Congrats you've successfully made a new Account.");
                 Users users = new Users(username, password);
-                usersWithAccounts.add(users);
+                usersWithAccounts.put(username, password);
                 count++;
-
                 break;
             }
         }
