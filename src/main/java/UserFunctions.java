@@ -20,7 +20,7 @@ public class UserFunctions {
             } else if (!(usersWithAccounts.containsKey(confirmUsername))) {
                 System.out.println("Sorry no user exists with this username");
             } else if (!(usersWithAccounts.get(confirmUsername).contains(checkAccountPassword))) {
-                System.out.println("Sorry ");
+                System.out.println("Sorry that password is incorrect");
             }
         }
     }
