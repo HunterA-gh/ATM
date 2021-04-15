@@ -24,13 +24,6 @@ public abstract class AccountTypes {
         return false;
     }
 
-    /*public void withdraw(double amount) { //OLD METHOD
-        if (amount <= balance) {
-            balance -= amount;
-        }else{
-            System.out.println("Invalid amount");
-        }
-    }*/
 
     public boolean deposit(double amount) {
         amount = Console.twoDecimalPlaces(amount);
@@ -44,15 +37,10 @@ public abstract class AccountTypes {
         }
     }
 
-    /*public void deposit(double amount){ //OLD METHOD
-        balance += amount;
-    }*/
 
     public double getInAccount(){
         return balance;
     }
-
-    //public abstract void giveTransfer(int account, double amount); //OLD METHOD
 
     public boolean transferTo(Account otherAccount, double amount) {
         amount = Console.twoDecimalPlaces(amount);
