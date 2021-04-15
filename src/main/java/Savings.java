@@ -15,5 +15,6 @@ public class Savings extends AccountTypes {
         System.out.println(amount+" hase been transferred to "+account);
     }
 
+
 }
 
