@@ -1,7 +1,6 @@
-public class Investment extends AccountTypes{
+public class Investment extends AccountTypes {
 
-    public Investment(double balance){
+    public Investment(double balance) {
         super(balance);
     }
-
 }

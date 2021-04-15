@@ -2,9 +2,14 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class AccountTypes {
+    private Accounts type;
     private int accountNumber;
     private double balance;
     private ArrayList<String> transactionHistory = new ArrayList<String>();
+
+    public AccountTypes(){
+        this.type = Accounts.CHECKING;
+    }
 
     public AccountTypes(double inAccount) {
         this.balance = inAccount;
@@ -39,9 +44,6 @@ public abstract class AccountTypes {
     public double getBalance(){
         return balance;
     }
-
-    public abstract void giveTransfer(int account, double amount);
-
 
     public boolean transferTo(AccountTypes otherAccount, double amount) {
         amount = Console.twoDecimalPlaces(amount);
