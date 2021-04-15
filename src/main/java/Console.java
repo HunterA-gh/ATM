@@ -6,11 +6,11 @@ public class Console {
 
     public static void main(String[] args) {
 
+        bootUpLogo();
         bootUpATM();
     }
 
     public static void bootUpATM() {
-        bootUpLogo();
         System.out.println("What do you want to do?");
         System.out.printf("%5s-%5s\n", "[1] ", " Log in to existing account.");
         System.out.printf("%5s-%5s\n", "[2] ", " Create a new account.");
@@ -28,33 +28,27 @@ public class Console {
     public static void afterCreateNewUserProfile() {
         // after creating a new account on the bootUpATM
         // this will be the menu the user can interact with
-        System.out.println("Welcome to your new account." + "\n What would you like to do?");
-        System.out.printf("%5s-%5s\n", "[1] ", " Create a new Checking account.");
-        System.out.printf("%5s-%5s\n", "[2] ", " Create a new Savings account.");
-        System.out.printf("%5s-%5s\n", "[3] ", " Create a new Investment account.");
-        System.out.printf("%5s-%5s\n", "[4] ", " Return to Main Menu.");
-        int inputOnNewAccountUserScreen = atmScanner.nextInt();
-        switch (inputOnNewAccountUserScreen) {
-            case 1: {
-                //openNewCheckingAccount()
-                break;
-            }
-            case 2: {
-                //createnewsavingsaccount();
-                break;
-            }
-            case 3: {
-                //createnewinvetsmentaccount();
-                break;
-            }
-            case 4: {
-                bootUpATM();
-                break;
-            }
+        bootUpATM();
+//        int inputOnNewAccountUserScreen = atmScanner.nextInt();
+//        switch (inputOnNewAccountUserScreen) {
+//            case 1: {
+//                UserFunctions.makeAccountCheckingAccount();
+//                break;
+//            }
+//            case 2: {
+//                UserFunctions.makeAccountSavingsAccount();
+//                break;
+//            }
+//            case 3: {
+//                UserFunctions.makeAccountInvestmentAccount();
+//                break;
+//            }
+//            case 4: {
+//                bootUpATM();
+//                break;
+//            }
         }
 
-
-        }
 
     public static void afterLogIntoExistingUserProfile() {
         // after logging into an existing account
@@ -71,15 +65,15 @@ public class Console {
         int inputOnAfterLogIntoAccountScreen = atmScanner.nextInt();
         switch (inputOnAfterLogIntoAccountScreen) {
             case 1: {
-                //openNewCheckingAccount()
-                break;
+                UserFunctions.makeAccountCheckingAccount();
+                return;
             }
             case 2: {
-                //openNewSavingsAccount();
+                UserFunctions.makeAccountSavingsAccount();
                 break;
             }
             case 3: {
-                //openNewInvetsmentAccount();
+                UserFunctions.makeAccountInvestmentAccount();
                 break;
             }
             case 4: {

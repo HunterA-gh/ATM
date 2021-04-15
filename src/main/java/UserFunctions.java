@@ -76,33 +76,24 @@ public class UserFunctions {
 
     }
 
-    public static Savings makeAccountSavingsAccount(User users) {
-        //for(int i = 0; i< UserFunctions.users.size(); i++)
-            if(UserFunctions.users.containsKey(users)){
-//                logIntoExistingAccount();
+    public static Savings makeAccountSavingsAccount() {
+        for (int i = 0; i> UserFunctions.users.size(); i++){
+            if (UserFunctions.users.containsKey(users)){
                 System.out.println("How much do you want to deposit into account?: ");
-                Scanner userInputer = new Scanner(System.in);
-                double initialDeposit =  userInputer.nextDouble();
-                //usersWithAccounts.(new Savings(initialDeposit));
-
-            }else {
-                createNewUserProfile();
-                System.out.println("How much do you want to deposit into account?: ");
-                Scanner userInputer = new Scanner(System.in);
-                double initialDeposit =  userInputer.nextDouble();
+                Scanner userInput = new Scanner(System.in);
+                double initialDeposit = userInput.nextDouble();
                 return new Savings(initialDeposit);
-            }
-
-        System.out.println("How much do you want to deposit into account?: ");
-            Scanner userInputer = new Scanner(System.in);
-          double initialDeposit =  userInputer.nextDouble();
+            }else System.out.println("How much do you want to deposit into account?: ");
+            Scanner userInput = new Scanner(System.in);
+            double initialDeposit = userInput.nextDouble();
             return new Savings(initialDeposit);
+
+        }return null;
     }
 
-    public static Investment makeAccountInvestmentaccount(User users){
-        for(int i = 0; i> UserFunctions.users.size(); i++){
-            if(UserFunctions.users.containsKey(users)){
-                logIntoExistingUserProfile();
+    public static Investment makeAccountInvestmentAccount(){
+        for (int i = 0; i> UserFunctions.users.size(); i++){
+            if (UserFunctions.users.containsKey(users)){
                 System.out.println("How much do you want to deposit into account?: ");
                 Scanner userInput = new Scanner(System.in);
                 double initialDeposit = userInput.nextDouble();
@@ -114,20 +105,21 @@ public class UserFunctions {
 
         }return null;
     }
-    public static Checking makeAccountCheckingAccount(User users) {
-        for (int i = 0; i < UserFunctions.users.size(); i++) {
+    public static Checking makeAccountCheckingAccount() {
+        for (int i = 0; i < UserFunctions.userArrayList.size(); i++) {
 
             if (UserFunctions.users.containsKey(users)) {
-
-                logIntoExistingUserProfile();
                 System.out.println("How much do you want to deposit into account?: ");
                 Scanner userInput = new Scanner(System.in);
                 double initialDeposit = userInput.nextDouble();
-                return new Checking(initialDeposit);
+                Checking checking = new Checking(initialDeposit);
+                return checking;
+
             } else System.out.println("How much do you want to deposit into account?: ");
             Scanner userInput = new Scanner(System.in);
             double initialDeposit = userInput.nextDouble();
-            return new Checking(initialDeposit);
+            Checking checking = new Checking(initialDeposit);
+            System.out.println(checking.getInAccount());
         }return null;
     }
 
