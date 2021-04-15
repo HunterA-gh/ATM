@@ -15,14 +15,20 @@ public class UserFunctions {
             System.out.println("Hello " + confirmUsername);
             System.out.println("Please enter your password : ");
             String checkAccountPassword = scanner.nextLine();
-            if (usersWithAccounts.get(confirmUsername) != null && usersWithAccounts.get(confirmUsername).contains(checkAccountPassword)) {
+            if (usersWithAccounts.get(confirmUsername).contains(checkAccountPassword)) {
                 System.out.println("Welcome back to your account");
-            } else if (!(usersWithAccounts.containsKey(confirmUsername))) {
+                Console.afterLogIntoExistingAccountScreen();
+
+            } else if (!(usersWithAccounts.get(confirmUsername).contains(confirmUsername))) {
                 System.out.println("Sorry no user exists with this username");
-            } else if (!(usersWithAccounts.get(confirmUsername).contains(checkAccountPassword))) {
+                //System.exit(0);
+
+            } else if (!(usersWithAccounts.get(checkAccountPassword).contains(checkAccountPassword))) {
                 System.out.println("Sorry that password is incorrect");
+                //System.exit(0);
+
             }
-        }
+        } //return;
     }
 //        System.out.println("Username: " + username);
 //        if (username.equals(usersWithAccounts.contains(username))) {
@@ -48,8 +54,8 @@ public class UserFunctions {
 
         System.out.println("Please create a new password: ");
         String password = scanner.nextLine();
-        System.out.println("Password: " + password);
-        System.out.println("Please re-enter your new password to confirm.");
+        System.out.println("Your Password is : " + password);
+        System.out.println("Please re-enter your new password to confirm : ");
         String confirmPass = scanner.nextLine();
 
         int count = 0;
@@ -69,7 +75,13 @@ public class UserFunctions {
             }
         }
     }
+
+    public static Map<String, String> getUsersWithAccounts() {
+        return usersWithAccounts;
+    }
 }
+
+
 //        if (password.equals(confirmPass)) {
 //            System.out.println("Thank you for confirming. Your new Password: " + confirmPass);
 //        } else {
