@@ -7,42 +7,39 @@ import java.util.Scanner;
 public class UserFunctions {
 
     static Scanner scanner = new Scanner(System.in);
-    private static Map<String, String> users = new HashMap<>();
+    //private static Map<String, String> users = new HashMap<>();
     private static ArrayList<User> userArrayList = new ArrayList<>();
 
     public static void logIntoExistingUserProfile() {
+        int passwordAttempts = 0;
         System.out.println("Please enter your Username : ");
         String confirmUsername = scanner.nextLine();
-        if (users.containsKey(confirmUsername)) {
-            System.out.println("Hello " + confirmUsername);
-            System.out.println("Please enter your password : ");
-            String checkAccountPassword = scanner.nextLine();
-            if (users.get(confirmUsername).contains(checkAccountPassword)) {
-                System.out.println("Welcome back to your account");
-                Console.afterLogIntoExistingAccountScreen();
-
-            } else if (!(users.get(confirmUsername).contains(confirmUsername))) {
-                System.out.println("Sorry username or password is incorrect");
-                //System.exit(0);
+        for (User x : userArrayList) {
+            if (x.getUsername().equals(confirmUsername)) {
+                int currentUser = userArrayList.indexOf(x);
+                System.out.println("Welcome back " + x.getUsername() + "\n" + "Please enter your password :");
+                String userPassword = scanner.nextLine();
+                if (userPassword.equals(x.getPassword())) {
+                    System.out.println("You are now logged into your account");
+                    Console.afterLogIntoExistingUserProfile();
+                }
+                else if (!(x.getPassword().equals(userPassword))) {
+                    System.out.println("Sorry password does not match. Please try again");
+                    while (passwordAttempts < 3) {
+                        if ((!userPassword.equals(x.getPassword()))) {
+                            System.out.println("Sorry passwords do not match. Try again.");
+                            passwordAttempts++;
+                            userPassword = scanner.nextLine();
+                            } else {
+                                System.out.println("good job bro that's your password");
+                                Console.afterLogIntoExistingUserProfile();
+                                break;
+                        }
+                    }
+                }
             }
-        } //return;
+        }
     }
-//        System.out.println("Username: " + username);
-//        if (username.equals(usersWithAccounts.contains(username))) {
-//            System.out.println("Please enter your password: ");
-//        } else if (username.equals(usersWithAccounts.contains(username) == false)){
-//            System.out.println("error");
-//            }
-//        String password = scanner.nextLine();
-//            if (password.equals(usersWithAccounts.contains(password)))
-//            {
-//                System.out.println("Welcome back " + username + ". What would you like to do?");
-//            }
-//            else {
-//                System.out.println("error.");
-//            }
-//        }
-
 
     public static void createNewUserProfile() {
         System.out.println("Please create a Username");
@@ -57,7 +54,6 @@ public class UserFunctions {
 
         int count = 0;
 
-//create while loop, set loop continuation condition to count < 3
         while (count < 1) {
 
             if ((!confirmPass.equals(password))) {
@@ -67,7 +63,6 @@ public class UserFunctions {
                 System.out.println("Congrats you've successfully made a new Account.");
                 User user = new User(username, password);
                 userArrayList.add(user);
-                UserFunctions.users.put(username, password);
                 count++;
                 break;
             }
@@ -76,64 +71,51 @@ public class UserFunctions {
 
     }
 
-    public static Savings makeAccountSavingsAccount(User users) {
-        //for(int i = 0; i< UserFunctions.users.size(); i++)
-            if(UserFunctions.users.containsKey(users)){
-//                logIntoExistingAccount();
-                System.out.println("How much do you want to deposit into account?: ");
-                Scanner userInputer = new Scanner(System.in);
-                double initialDeposit =  userInputer.nextDouble();
-                //usersWithAccounts.(new Savings(initialDeposit));
-
-            }else {
-                createNewUserProfile();
-                System.out.println("How much do you want to deposit into account?: ");
-                Scanner userInputer = new Scanner(System.in);
-                double initialDeposit =  userInputer.nextDouble();
-                return new Savings(initialDeposit);
-            }
-
-        System.out.println("How much do you want to deposit into account?: ");
-            Scanner userInputer = new Scanner(System.in);
-          double initialDeposit =  userInputer.nextDouble();
-            return new Savings(initialDeposit);
-    }
-
-    public static Investment makeAccountInvestmentaccount(User users){
-        for(int i = 0; i> UserFunctions.users.size(); i++){
-            if(UserFunctions.users.containsKey(users)){
-                logIntoExistingUserProfile();
+    public static Savings makeAccountSavingsAccount(User user) {
+        if (userArrayList.contains(user)) {
                 System.out.println("How much do you want to deposit into account?: ");
                 Scanner userInput = new Scanner(System.in);
                 double initialDeposit = userInput.nextDouble();
-                return new Investment(initialDeposit);
+                Savings savings = new Savings(initialDeposit);
             }else System.out.println("How much do you want to deposit into account?: ");
             Scanner userInput = new Scanner(System.in);
             double initialDeposit = userInput.nextDouble();
-            return new Investment(initialDeposit);
+            return new Savings(initialDeposit);
+        }
 
-        }return null;
-    }
-    public static Checking makeAccountCheckingAccount(User users) {
-        for (int i = 0; i < UserFunctions.users.size(); i++) {
-
-            if (UserFunctions.users.containsKey(users)) {
-
-                logIntoExistingUserProfile();
-                System.out.println("How much do you want to deposit into account?: ");
-                Scanner userInput = new Scanner(System.in);
-                double initialDeposit = userInput.nextDouble();
-                return new Checking(initialDeposit);
-            } else System.out.println("How much do you want to deposit into account?: ");
+//    public static Investment makeAccountInvestmentAccount(){
+//        for (int i = 0; i> UserFunctions.users.size(); i++){
+//            if (UserFunctions..containsKey(users)){
+//                System.out.println("How much do you want to deposit into account?: ");
+//                Scanner userInput = new Scanner(System.in);
+//                double initialDeposit = userInput.nextDouble();
+//                return new Investment(initialDeposit);
+//            }else System.out.println("How much do you want to deposit into account?: ");
+//            Scanner userInput = new Scanner(System.in);
+//            double initialDeposit = userInput.nextDouble();
+//            return new Investment(initialDeposit);
+//
+//        }return null;
+    public static Checking makeAccountCheckingAccount() {
+        System.out.println("Please enter your username");
+        String theSpecificUsername = scanner.nextLine();
+        if (theSpecificUsername.equals(userArrayList.contains(theSpecificUsername))) {
+            userArrayList.get(userArrayList.indexOf(userArrayList.contains(theSpecificUsername)));
+            System.out.println("How much do you want to deposit into account?: ");
             Scanner userInput = new Scanner(System.in);
             double initialDeposit = userInput.nextDouble();
-            return new Checking(initialDeposit);
-        }return null;
+            Checking checking = new Checking(initialDeposit);
+            return checking;
+
+        } else System.out.println("How much do you want to deposit into account?: ");
+        Scanner userInput = new Scanner(System.in);
+        double initialDeposit = userInput.nextDouble();
+        Checking checking = new Checking(initialDeposit);
+        return checking;
     }
 
-
-    public static Map<String, String> getUsers() {
-        return users;
+    public static ArrayList<User> getUserArrayList() {
+        return userArrayList;
     }
 }
 
@@ -154,3 +136,4 @@ public class UserFunctions {
 //            System.out.println("Error. Passwords do not match. Please try again.");
 //            // call the method to put in a password again
 //        }
+

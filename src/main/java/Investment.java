@@ -8,6 +8,4 @@ public class Investment extends AccountTypes{
     public void giveTransfer(int account, double amount) {
 
     }
-
-
 }
