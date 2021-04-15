@@ -1,8 +1,13 @@
 import java.util.Scanner;
 
+<<<<<<< HEAD
 public class Console extends Accounts {
+=======
+>>>>>>> feaffc142f4c360c783bd2eb61881c35b86a04d7
 
+public class Console {
     public static void main(String[] args) {
+
 
         bootUpATM();
 
@@ -19,9 +24,16 @@ public class Console extends Accounts {
             logIntoExistingAccount();
         }
         if (inputOnHomeScreen == 2) {
+<<<<<<< HEAD
             createNewAccount();
             
         }
+=======
+            //createNewAccount();
+
+            System.out.println("Caesar eats poop");
+        }   
+>>>>>>> feaffc142f4c360c783bd2eb61881c35b86a04d7
     }
 
 
