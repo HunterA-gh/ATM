@@ -1,4 +1,4 @@
-public class Investment extends AccountTypes{
+public class Investment extends AccountTypes implements CheckBalance{
 
     private double inAccount;
 
@@ -17,5 +17,9 @@ public class Investment extends AccountTypes{
     @Override
     public double getInAccount() {
         return inAccount;
+    }
+
+    public void printBalance(){
+        System.out.println("Your balance is " + getInAccount());
     }
 }

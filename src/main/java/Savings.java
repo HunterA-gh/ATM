@@ -1,4 +1,4 @@
-public class Savings extends AccountTypes {
+public class Savings extends AccountTypes implements CheckBalance {
 
     private double inAccount;
 
@@ -17,6 +17,11 @@ public class Savings extends AccountTypes {
     @Override
     public double getInAccount() {
         return inAccount;
+    }
+
+
+    public void printBalance(){
+        System.out.println("Your balance is " + getInAccount());
     }
 }
 

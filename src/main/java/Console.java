@@ -1,15 +1,15 @@
 import java.util.Scanner;
 
-<<<<<<< HEAD
-public class Console extends Accounts {
-=======
->>>>>>> feaffc142f4c360c783bd2eb61881c35b86a04d7
 
-public class Console {
+public class Console extends Accounts {
+
+
+
+
     public static void main(String[] args) {
 
 
-        bootUpATM();
+        //bootUpATM();
 
     }
 
@@ -24,18 +24,21 @@ public class Console {
             logIntoExistingAccount();
         }
         if (inputOnHomeScreen == 2) {
-<<<<<<< HEAD
+
             createNewAccount();
             
         }
-=======
-            //createNewAccount();
 
-            System.out.println("Caesar eats poop");
-        }   
->>>>>>> feaffc142f4c360c783bd2eb61881c35b86a04d7
+        }
+
+        public static void ShutdownATM() {
+
+            System.out.println("The ATM will now shutdown\nHave a nice day :)");
+
+        }
+
     }
 
 
 
-}
+

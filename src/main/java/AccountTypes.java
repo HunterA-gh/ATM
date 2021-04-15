@@ -1,4 +1,4 @@
-public abstract class AccountTypes {
+public abstract class AccountTypes implements CheckBalance{
 
     private double inAccount;
 

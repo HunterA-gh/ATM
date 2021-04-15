@@ -1,4 +1,5 @@
-public class Checking extends AccountTypes {
+public class Checking extends AccountTypes implements CheckBalance {
+
     private double inAccount;
 
     @Override
@@ -10,11 +11,6 @@ public class Checking extends AccountTypes {
     @Override
     public double deposit(double amount){
         inAccount += amount;
-        return inAccount;
-    }
-
-    @Override
-    public double getInAccount() {
         return inAccount;
     }
 
@@ -31,5 +27,16 @@ public class Checking extends AccountTypes {
         }
         System.out.println(amount+" hase been transferred to "+account);
     }
+
+    @Override
+    public double getInAccount() {
+        return inAccount;
+    }
+
+    public void printBalance(){
+        System.out.println("Your balance is " + getInAccount());
+    }
 }
+
+
 
