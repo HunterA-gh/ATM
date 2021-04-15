@@ -68,6 +68,7 @@ public class Console {
         System.out.printf("%5s-%5s\n", "[6] ", " Log into your existing Investment account.");
         System.out.printf("%5s-%5s\n", "[7] ", " Close this account.");
         System.out.printf("%5s-%5s\n", "[8] ", " Return to the Main Menu.");
+        System.out.println("conflict");
         int inputOnAfterLogIntoAccountScreen = atmScanner.nextInt();
         switch (inputOnAfterLogIntoAccountScreen) {
             case 1: {
@@ -130,9 +131,10 @@ public class Console {
                     "                                                                                 \n" +
                     "                                                                                 \n");
         }
-    }
+
 
     public static double twoDecimalPlaces(double moveTwoDecimalPlace) {
         return Math.floor(moveTwoDecimalPlace * 100) / 100;
+        //Dont mind me causing trouble
     }
 }
