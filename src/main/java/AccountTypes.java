@@ -1,20 +1,24 @@
 public abstract class AccountTypes {
-    private double inAccount;
+    private double balance;
 
-    public AccountTypes(double inAccount){
-        this.inAccount = inAccount;
+    public AccountTypes(double inAccount) {
+        this.balance = inAccount;
     }
 
-    public void withdraw(double amount){
-        inAccount -= amount;
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        }else{
+            System.out.println("Invalid amount");
+        }
     }
 
     public void deposit(double amount){
-        inAccount += amount;
+        balance += amount;
     }
 
     public double getInAccount(){
-        return inAccount;
+        return balance;
     }
 
     public abstract void giveTransfer(int account, double amount);
