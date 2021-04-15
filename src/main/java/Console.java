@@ -54,7 +54,7 @@ public class Console {
         }
 
 
-    }
+        }
 
     public static void afterLogIntoExistingAccountScreen() {
         // after logging into an existing account
@@ -75,7 +75,7 @@ public class Console {
                 break;
             }
             case 2: {
-                UserFunctions.makeAccountSavingsAccount();
+                //openNewSavingsAccount();
                 break;
             }
             case 3: {
@@ -105,31 +105,31 @@ public class Console {
         }
 
 
-    }
+        }
 
-    public static void bootUpLogo () {
-        System.out.println("\n" +
-                "                                                                                 \n" +
-                "                                                                                 \n" +
-                "               AAA         TTTTTTTTTTTTTTTTTTTTTTTMMMMMMMM               MMMMMMMM\n" +
-                "              A:::A        T:::::::::::::::::::::TM:::::::M             M:::::::M\n" +
-                "             A:::::A       T:::::::::::::::::::::TM::::::::M           M::::::::M\n" +
-                "            A:::::::A      T:::::TT:::::::TT:::::TM:::::::::M         M:::::::::M\n" +
-                "           A:::::::::A     TTTTTT  T:::::T  TTTTTTM::::::::::M       M::::::::::M\n" +
-                "          A:::::A:::::A            T:::::T        M:::::::::::M     M:::::::::::M\n" +
-                "         A:::::A A:::::A           T:::::T        M:::::::M::::M   M::::M:::::::M\n" +
-                "        A:::::A   A:::::A          T:::::T        M::::::M M::::M M::::M M::::::M\n" +
-                "       A:::::A     A:::::A         T:::::T        M::::::M  M::::M::::M  M::::::M\n" +
-                "      A:::::AAAAAAAAA:::::A        T:::::T        M::::::M   M:::::::M   M::::::M\n" +
-                "     A:::::::::::::::::::::A       T:::::T        M::::::M    M:::::M    M::::::M\n" +
-                "    A:::::AAAAAAAAAAAAA:::::A      T:::::T        M::::::M     MMMMM     M::::::M\n" +
-                "   A:::::A             A:::::A   TT:::::::TT      M::::::M               M::::::M\n" +
-                "  A:::::A               A:::::A  T:::::::::T      M::::::M               M::::::M\n" +
-                " A:::::A                 A:::::A T:::::::::T      M::::::M               M::::::M\n" +
-                "AAAAAAA                   AAAAAAATTTTTTTTTTT      MMMMMMMM               MMMMMMMM\n" +
-                "                                                                                 \n" +
-                "                                                                                 \n");
-    }
+        public static void bootUpLogo () {
+            System.out.println("\n" +
+                    "                                                                                 \n" +
+                    "                                                                                 \n" +
+                    "               AAA         TTTTTTTTTTTTTTTTTTTTTTTMMMMMMMM               MMMMMMMM\n" +
+                    "              A:::A        T:::::::::::::::::::::TM:::::::M             M:::::::M\n" +
+                    "             A:::::A       T:::::::::::::::::::::TM::::::::M           M::::::::M\n" +
+                    "            A:::::::A      T:::::TT:::::::TT:::::TM:::::::::M         M:::::::::M\n" +
+                    "           A:::::::::A     TTTTTT  T:::::T  TTTTTTM::::::::::M       M::::::::::M\n" +
+                    "          A:::::A:::::A            T:::::T        M:::::::::::M     M:::::::::::M\n" +
+                    "         A:::::A A:::::A           T:::::T        M:::::::M::::M   M::::M:::::::M\n" +
+                    "        A:::::A   A:::::A          T:::::T        M::::::M M::::M M::::M M::::::M\n" +
+                    "       A:::::A     A:::::A         T:::::T        M::::::M  M::::M::::M  M::::::M\n" +
+                    "      A:::::AAAAAAAAA:::::A        T:::::T        M::::::M   M:::::::M   M::::::M\n" +
+                    "     A:::::::::::::::::::::A       T:::::T        M::::::M    M:::::M    M::::::M\n" +
+                    "    A:::::AAAAAAAAAAAAA:::::A      T:::::T        M::::::M     MMMMM     M::::::M\n" +
+                    "   A:::::A             A:::::A   TT:::::::TT      M::::::M               M::::::M\n" +
+                    "  A:::::A               A:::::A  T:::::::::T      M::::::M               M::::::M\n" +
+                    " A:::::A                 A:::::A T:::::::::T      M::::::M               M::::::M\n" +
+                    "AAAAAAA                   AAAAAAATTTTTTTTTTT      MMMMMMMM               MMMMMMMM\n" +
+                    "                                                                                 \n" +
+                    "                                                                                 \n");
+        }
 
 
     public static double twoDecimalPlaces(double moveTwoDecimalPlace) {

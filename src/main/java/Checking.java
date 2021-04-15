@@ -5,8 +5,12 @@ public class Checking extends AccountTypes {
     }
 
     @Override
-    public void giveTransfer(int account, double amount) {
+    public void printBalance() {
 
     }
 
+    @Override
+    public void giveTransfer(int account, double amount) {
+
+    }
 }
