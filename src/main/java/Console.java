@@ -23,7 +23,7 @@ public class Console {
         if (inputOnHomeScreen == 2) {
             UserFunctions.createNewAccount();
 
-        }   
+        }
     }
 
     public static void bootUpLogo() {
