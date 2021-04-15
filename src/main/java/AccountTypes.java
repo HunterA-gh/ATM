@@ -40,6 +40,10 @@ public abstract class AccountTypes {
         return balance;
     }
 
+    public void printBalance() {
+        System.out.println(String.format("%-11s$%,.2f" , "Balance:" , getBalance()));
+    }
+
     public abstract void giveTransfer(int account, double amount);
 
 
