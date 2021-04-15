@@ -44,7 +44,10 @@ public abstract class AccountTypes {
     public double getBalance(){
         return balance;
     }
-
+  
+    public void printBalance() {
+        System.out.println(String.format("%-11s$%,.2f" , "Balance:" , getBalance()));
+    }
     public boolean transferTo(AccountTypes otherAccount, double amount) {
         amount = Console.twoDecimalPlaces(amount);
         boolean validWithdraw = this.withdraw(amount);
