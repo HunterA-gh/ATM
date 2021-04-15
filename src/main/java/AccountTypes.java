@@ -24,7 +24,6 @@ public abstract class AccountTypes {
         return false;
     }
 
-
     public boolean deposit(double amount) {
         amount = Console.twoDecimalPlaces(amount);
         if(amount > 0) {
@@ -37,12 +36,11 @@ public abstract class AccountTypes {
         }
     }
 
-
-    public double getInAccount(){
+    public double getBalance(){
         return balance;
     }
 
-    public boolean transferTo(Account otherAccount, double amount) {
+    public boolean transferTo(AccountTypes otherAccount, double amount) {
         amount = Console.twoDecimalPlaces(amount);
         boolean validWithdraw = this.withdraw(amount);
         if(validWithdraw) {
