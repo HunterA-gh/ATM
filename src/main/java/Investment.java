@@ -4,4 +4,8 @@ public class Investment extends AccountTypes{
         super(balance);
     }
 
+    @Override
+    public void printBalance() {
+
+    }
 }

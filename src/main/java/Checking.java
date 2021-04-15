@@ -4,4 +4,8 @@ public class Checking extends AccountTypes {
         super(inAccount);
     }
 
+    @Override
+    public void printBalance() {
+
+    }
 }

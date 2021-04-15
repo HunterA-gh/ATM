@@ -38,8 +38,12 @@ public abstract class AccountTypes {
     }
 
 
-    public double getInAccount(){
+    public double getBalance(){
         return balance;
+    }
+
+    public void printBalance(){
+        System.out.println(String.format("%-11s$%,.2f", "Balance:", getBalance()));
     }
 
     public boolean transferTo(Account otherAccount, double amount) {

@@ -4,5 +4,9 @@ public class Savings extends AccountTypes {
         super(balance);
     }
 
+    @Override
+    public void printBalance() {
+
+    }
 }
 
