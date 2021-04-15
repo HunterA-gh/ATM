@@ -65,7 +65,8 @@ public class UserFunctions {
                 System.out.println("How much do you want to deposit into account?: ");
                 Scanner userInputer = new Scanner(System.in);
                 double initialDeposit =  userInputer.nextDouble();
-                return new Savings(initialDeposit);
+                users.
+                usersWithAccounts.add(new Savings(initialDeposit));
 
             }else {
                 createNewAccount();
