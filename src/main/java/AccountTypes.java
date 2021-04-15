@@ -24,7 +24,6 @@ public abstract class AccountTypes {
         return false;
     }
 
-
     public boolean deposit(double amount) {
         amount = Console.twoDecimalPlaces(amount);
         if(amount > 0) {
@@ -37,11 +36,13 @@ public abstract class AccountTypes {
         }
     }
 
-
-    public double getInAccount(){
+    public double getBalance(){
         return balance;
     }
 
+    public void printBalance() {
+        System.out.println(String.format("%-11s$%,.2f" , "Balance:" , getBalance()));
+    }
 
     public abstract void giveTransfer(int account, double amount);
 

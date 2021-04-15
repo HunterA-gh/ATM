@@ -6,9 +6,8 @@ public class Checking extends AccountTypes {
     }
 
     @Override
-
     public void giveTransfer(int account, double amount) {
-        if (account == 2 && getInAccount() >= amount) {
+        if (account == 2 && getBalance() >= amount) {
 
 
     /*
@@ -29,6 +28,7 @@ public class Checking extends AccountTypes {
         }
 
     }
+    public void printBalance() {
 
     }
-
+}
