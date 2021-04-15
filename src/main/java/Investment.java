@@ -5,7 +5,9 @@ public class Investment extends AccountTypes{
     }
 
     @Override
-    public void printBalance() {
+    public void giveTransfer(int account, double amount) {
 
     }
+
+
 }

@@ -8,4 +8,9 @@ public class Checking extends AccountTypes {
     public void printBalance() {
 
     }
+
+    @Override
+    public void giveTransfer(int account, double amount) {
+
+    }
 }
