@@ -42,6 +42,10 @@ public abstract class AccountTypes {
         return balance;
     }
 
+
+    public abstract void giveTransfer(int account, double amount);
+
+
     public boolean transferTo(Account otherAccount, double amount) {
         amount = Console.twoDecimalPlaces(amount);
         boolean validWithdraw = this.withdraw(amount);
@@ -67,4 +71,5 @@ public abstract class AccountTypes {
     public int getAccountNumber() {
         return accountNumber;
     }
+
 }

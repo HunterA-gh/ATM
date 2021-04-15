@@ -4,5 +4,6 @@ public class Savings extends AccountTypes {
         super(balance);
     }
 
+
 }
 
