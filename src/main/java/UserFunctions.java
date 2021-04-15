@@ -69,17 +69,86 @@ public class UserFunctions {
             } else {
                 System.out.println("Congrats you've successfully made a new Account.");
                 Users users = new Users(username, password);
+
                 usersWithAccounts.put(username, password);
+                count++;
+
+                //usersWithAccounts.add(users);
                 count++;
                 break;
             }
+
         }
+
     }
+    public static Savings makeAccountSavingsAccount(Users users) {
+        for(int i =0;i<usersWithAccounts.size();i++)
+            if(usersWithAccounts.containsKey(users)){
+                logIntoExistingAccount();
+                System.out.println("How much do you want to deposit into account?: ");
+                Scanner userInputer = new Scanner(System.in);
+                double initialDeposit =  userInputer.nextDouble();
+                //usersWithAccounts.(new Savings(initialDeposit));
+
+            }else {
+                createNewAccount();
+                System.out.println("How much do you want to deposit into account?: ");
+                Scanner userInputer = new Scanner(System.in);
+                double initialDeposit =  userInputer.nextDouble();
+                return new Savings(initialDeposit);
+            }
+
+        System.out.println("How much do you want to deposit into account?: ");
+            Scanner userInputer = new Scanner(System.in);
+          double initialDeposit =  userInputer.nextDouble();
+            return new Savings(initialDeposit);
+    }
+    public static Investment makeAccountInvestmentaccount(Users users){
+        for(int i =0;i>usersWithAccounts.size();i++){
+            if(usersWithAccounts.containsKey(users)){
+                logIntoExistingAccount();
+                System.out.println("How much do you want to deposit into account?: ");
+                Scanner userInput = new Scanner(System.in);
+                double initialDeposit = userInput.nextDouble();
+                return new Investment(initialDeposit);
+            }else System.out.println("How much do you want to deposit into account?: ");
+            Scanner userInput = new Scanner(System.in);
+            double initialDeposit = userInput.nextDouble();
+            return new Investment(initialDeposit);
+
+        }return null;
+    }
+    public static Checking makeAccountCheckingAccount(Users users) {
+        for (int i = 0; i < usersWithAccounts.size(); i++) {
+
+            if (usersWithAccounts.containsKey(users)) {
+
+                logIntoExistingAccount();
+                System.out.println("How much do you want to deposit into account?: ");
+                Scanner userInput = new Scanner(System.in);
+                double initialDeposit = userInput.nextDouble();
+                return new Checking(initialDeposit);
+            } else System.out.println("How much do you want to deposit into account?: ");
+            Scanner userInput = new Scanner(System.in);
+            double initialDeposit = userInput.nextDouble();
+            return new Checking(initialDeposit);
+        }return null;
+    }
+
 
     public static Map<String, String> getUsersWithAccounts() {
         return usersWithAccounts;
     }
 }
+
+
+
+
+//public static Investment makeAccountInvestmentAccount(Users newUser,){
+//    System.out.println("How much do you want to deposit?");
+//            Scanner userInput = new Scanner(System.in);
+//
+//}
 
 
 //        if (password.equals(confirmPass)) {

@@ -5,9 +5,11 @@ public class Users {
     private Savings savings;
     private Checking checking;
 
+
     public Users(String username, String password) {
         this.username = username;
         this.password = password;
+
     }
 
     public String getUsername() {
@@ -49,5 +51,6 @@ public class Users {
     public void setChecking(Checking checking) {
         this.checking = checking;
     }
+
 }
 

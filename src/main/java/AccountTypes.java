@@ -22,4 +22,7 @@ public abstract class AccountTypes {
     }
 
     public abstract void giveTransfer(int account, double amount);
+
+
+
 }

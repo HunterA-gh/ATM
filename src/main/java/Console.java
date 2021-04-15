@@ -54,7 +54,8 @@ public class Console {
             }
         }
 
-    }
+
+        }
 
     public static void afterLogIntoExistingAccountScreen() {
         // after logging into an existing account
