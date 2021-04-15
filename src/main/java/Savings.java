@@ -4,5 +4,10 @@ public class Savings extends AccountTypes {
         super(balance);
     }
 
+    @Override
+    public void giveTransfer(int account, double amount) {
+
+    }
+
 
 }
