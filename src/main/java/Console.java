@@ -40,7 +40,7 @@ public class Console {
                 break;
             }
             case 2: {
-                //createnewsavingsaccount();
+                UserFunctions.makeAccountSavingsAccount(U);
                 break;
             }
             case 3: {
