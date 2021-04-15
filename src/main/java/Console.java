@@ -21,11 +21,11 @@ public class Console {
         }
         if (inputOnHomeScreen == 2) {
             UserFunctions.createNewUserProfile();
-            afterCreateNewAccountScreen();
+            afterCreateNewUserProfile();
         }
     }
 
-    public static void afterCreateNewAccountScreen() {
+    public static void afterCreateNewUserProfile() {
         // after creating a new account on the bootUpATM
         // this will be the menu the user can interact with
         System.out.println("Welcome to your new account." + "\n What would you like to do?");
@@ -56,7 +56,7 @@ public class Console {
 
         }
 
-    public static void afterLogIntoExistingAccountScreen() {
+    public static void afterLogIntoExistingUserProfile() {
         // after logging into an existing account
         // this will be the menu the user can interact with
         System.out.println("What would you like to do?");
@@ -130,7 +130,6 @@ public class Console {
                     "                                                                                 \n" +
                     "                                                                                 \n");
         }
-    }
 
     public static double twoDecimalPlaces(double moveTwoDecimalPlace) {
         return Math.floor(moveTwoDecimalPlace * 100) / 100;

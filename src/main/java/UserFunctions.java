@@ -19,7 +19,7 @@ public class UserFunctions {
             String checkAccountPassword = scanner.nextLine();
             if (users.get(confirmUsername).contains(checkAccountPassword)) {
                 System.out.println("Welcome back to your account");
-                Console.afterLogIntoExistingAccountScreen();
+                Console.afterLogIntoExistingUserProfile();
 
             } else if (!(users.get(confirmUsername).contains(confirmUsername))) {
                 System.out.println("Sorry username or password is incorrect");

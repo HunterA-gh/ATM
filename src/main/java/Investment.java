@@ -4,4 +4,9 @@ public class Investment extends AccountTypes{
         super(balance);
     }
 
+    @Override
+    public void giveTransfer(int account, double amount) {
+
+    }
+
 }

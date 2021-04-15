@@ -4,4 +4,9 @@ public class Checking extends AccountTypes {
         super(inAccount);
     }
 
+    @Override
+    public void giveTransfer(int account, double amount) {
+
+    }
+
 }

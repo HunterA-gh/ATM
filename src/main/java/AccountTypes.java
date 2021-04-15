@@ -46,7 +46,7 @@ public abstract class AccountTypes {
     public abstract void giveTransfer(int account, double amount);
 
 
-    public boolean transferTo(Account otherAccount, double amount) {
+    public boolean transferTo(AccountTypes otherAccount, double amount) {
         amount = Console.twoDecimalPlaces(amount);
         boolean validWithdraw = this.withdraw(amount);
         if(validWithdraw) {
