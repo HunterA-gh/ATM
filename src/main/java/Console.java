@@ -67,8 +67,8 @@ public class Console {
         System.out.printf("%5s-%5s\n", "[5] ", " Log into your existing Savings account.");
         System.out.printf("%5s-%5s\n", "[6] ", " Log into your existing Investment account.");
         System.out.printf("%5s-%5s\n", "[7] ", " Close this account.");
-        System.out.printf("%5s-%5s\n", "[8] ", " Return");
-        System.out.println("conflict");
+
+        System.out.printf("%5s-%5s\n", "[8] ", " Return ");
         int inputOnAfterLogIntoAccountScreen = atmScanner.nextInt();
         switch (inputOnAfterLogIntoAccountScreen) {
             case 1: {
