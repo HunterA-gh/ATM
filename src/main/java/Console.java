@@ -129,6 +129,7 @@ public class Console {
                 System.out.printf("%5s-%5s\n", "[4] ", "Print Transaction History");
                 System.out.printf("%5s-%5s\n", "[5] ", "Return to Previous Screen");
                 System.out.printf("%5s-%5s\n", "[6] ", "Return to Main Menu");
+                System.out.printf("%5s-%5s\n", "[7] ", "Close this account");
                 System.out.print(": ");
                 int inputOnCheckingAccountMenu = atmScanner.nextInt();
                 switch (inputOnCheckingAccountMenu) {
@@ -162,6 +163,11 @@ public class Console {
                         bootUpATM();
                         break;
                     }
+                    case 7: {
+                        UserFunctions.deleteCheckingAccount();
+                        afterLogIntoExistingUserProfile();
+                        break;
+                    }
                 }
             }
         }
@@ -180,6 +186,7 @@ public class Console {
                 System.out.printf("%5s-%5s\n", "[4] ", "Print Transaction History");
                 System.out.printf("%5s-%5s\n", "[5] ", "Return to Previous Screen");
                 System.out.printf("%5s-%5s\n", "[6] ", "Return to Main Menu");
+                System.out.printf("%5s-%5s\n", "[7] ", "Close this account");
                 System.out.print(": ");
                 int inputOnSavingsAccountMenu = atmScanner.nextInt();
                 switch (inputOnSavingsAccountMenu) {
@@ -213,6 +220,11 @@ public class Console {
                         bootUpATM();
                         break;
                     }
+                    case 7: {
+                        UserFunctions.deleteSavingsAccount();
+                        afterLogIntoExistingUserProfile();
+                        break;
+                    }
                 }
             }
         }
@@ -231,6 +243,7 @@ public class Console {
                 System.out.printf("%5s-%5s\n", "[4] ", "Print Transaction History");
                 System.out.printf("%5s-%5s\n", "[5] ", "Return to Previous Screen");
                 System.out.printf("%5s-%5s\n", "[6] ", "Return to Main Menu");
+                System.out.printf("%5s-%5s\n", "[7] ", "Close this account");
                 System.out.print(": ");
                 int inputOnInvestmentAccountMenu = atmScanner.nextInt();
                 switch (inputOnInvestmentAccountMenu) {
@@ -262,6 +275,11 @@ public class Console {
                     }
                     case 6: {
                         bootUpATM();
+                        break;
+                    }
+                    case 7: {
+                        UserFunctions.deleteInvestmentAccount();
+                        afterLogIntoExistingUserProfile();
                         break;
                     }
                 }

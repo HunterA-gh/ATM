@@ -73,7 +73,7 @@ public class User {
             default:
                 System.out.println("Invalid account number");
         }
-        System.out.println(amount+" transferred");
+        System.out.println(amount +" transferred");
     }
 
     public void transferFromSavings() {
@@ -101,7 +101,7 @@ public class User {
     public void transferFromInvestment() {
         System.out.println("Enter number to transfer");
         System.out.printf("%5s-%5s\n", "[1] ", "Checking");
-        System.out.printf("%5s-%5s\n", "[2] ", "Investment");
+        System.out.printf("%5s-%5s\n", "[2] ", "Savings");
         Scanner transferScan = new Scanner(System.in);
         int choice = transferScan.nextInt();
         System.out.println("Enter amount to transfer");
