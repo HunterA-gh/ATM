@@ -71,48 +71,50 @@ public class UserFunctions {
 
     }
 
-    public static Savings makeAccountSavingsAccount(User user) {
-        if (userArrayList.contains(user)) {
-                System.out.println("How much do you want to deposit into account?: ");
-                Scanner userInput = new Scanner(System.in);
-                double initialDeposit = userInput.nextDouble();
-                Savings savings = new Savings(initialDeposit);
-            }else System.out.println("How much do you want to deposit into account?: ");
-            Scanner userInput = new Scanner(System.in);
-            double initialDeposit = userInput.nextDouble();
-            return new Savings(initialDeposit);
+    public static void makeSavingsAccountForUserProfile() {
+        System.out.println("whats your password");
+        String thisUsersPassword = scanner.nextLine();
+        for (int i = 0; i < userArrayList.size(); i++) {
+            if (userArrayList.get(i).getPassword().equals(thisUsersPassword)) {
+                System.out.println("Please enter an initial deposit amount");
+                double initialDeposit = scanner.nextDouble();
+                Savings savings = new Savings(0.0);
+                userArrayList.get(i).setSavings(savings);
+                savings.deposit(initialDeposit);
+            }
         }
-
-//    public static Investment makeAccountInvestmentAccount(){
-//        for (int i = 0; i> UserFunctions.users.size(); i++){
-//            if (UserFunctions..containsKey(users)){
-//                System.out.println("How much do you want to deposit into account?: ");
-//                Scanner userInput = new Scanner(System.in);
-//                double initialDeposit = userInput.nextDouble();
-//                return new Investment(initialDeposit);
-//            }else System.out.println("How much do you want to deposit into account?: ");
-//            Scanner userInput = new Scanner(System.in);
-//            double initialDeposit = userInput.nextDouble();
-//            return new Investment(initialDeposit);
-//
-//        }return null;
-    public static Checking makeAccountCheckingAccount() {
-        System.out.println("Please enter your username");
-        String theSpecificUsername = scanner.nextLine();
-        if (theSpecificUsername.equals(userArrayList.contains(theSpecificUsername))) {
-            userArrayList.get(userArrayList.indexOf(userArrayList.contains(theSpecificUsername)));
-            System.out.println("How much do you want to deposit into account?: ");
-            Scanner userInput = new Scanner(System.in);
-            double initialDeposit = userInput.nextDouble();
-            Checking checking = new Checking(initialDeposit);
-            return checking;
-
-        } else System.out.println("How much do you want to deposit into account?: ");
-        Scanner userInput = new Scanner(System.in);
-        double initialDeposit = userInput.nextDouble();
-        Checking checking = new Checking(initialDeposit);
-        return checking;
     }
+
+
+    public static void makeInvestmentAccountForUserProfile() {
+        System.out.println("whats your password");
+        String thisUsersPassword = scanner.nextLine();
+        for (int i = 0; i < userArrayList.size(); i++) {
+            if (userArrayList.get(i).getPassword().equals(thisUsersPassword)) {
+                System.out.println("Please enter an initial deposit amount");
+                double initialDeposit = scanner.nextDouble();
+                Investment investment = new Investment(0.0);
+                userArrayList.get(i).setInvestment(investment);
+                investment.deposit(initialDeposit);
+            }
+        }
+    }
+
+    public static void makeCheckingAccountForUserProfile() {
+        System.out.println("whats your password");
+        String thisUsersPassword = scanner.nextLine();
+        for (int i = 0; i < userArrayList.size(); i++) {
+            if (userArrayList.get(i).getPassword().equals(thisUsersPassword)) {
+                System.out.println("Please enter an initial deposit amount");
+                double initialDeposit = scanner.nextDouble();
+                Checking checking = new Checking(0.0);
+                userArrayList.get(i).setChecking(checking);
+                checking.deposit(initialDeposit);
+            }
+        }
+    }
+
+
 
     public static ArrayList<User> getUserArrayList() {
         return userArrayList;

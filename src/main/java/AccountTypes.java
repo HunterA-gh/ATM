@@ -65,8 +65,10 @@ public abstract class AccountTypes {
         return output;
     }
 
-    public ArrayList<String> getTransactionHistory() {
-        return transactionHistory;
+    public void getTransactionHistory() {
+        for (String x : transactionHistory) {
+            System.out.println(x);
+        }
     }
 
     public int getAccountNumber() {
