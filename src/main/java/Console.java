@@ -144,6 +144,7 @@ public class Console {
                     }
                     case 3: {
                         UsersArrayList.get(i).transferFromChecking();
+                        checkingAccountMenu();
                         break;
                     }
                     case 4: {
@@ -191,12 +192,13 @@ public class Console {
                         break;
                     }
                     case 3: {
-                        //giveTransfer()
+                        UsersArrayList.get(i).transferFromSavings();
+                        savingsAccountMenu();
                         break;
                     }
                     case 4: {
                         UsersArrayList.get(i).getSavings().getTransactionHistory();
-
+                        savingsAccountMenu();
                         break;
                     }
                     case 5: {
@@ -239,7 +241,8 @@ public class Console {
                         break;
                     }
                     case 3: {
-                        //giveTransfer()
+                        UsersArrayList.get(i).transferFromInvestment();
+                        investmentAccountMenu();
                         break;
                     }
                     case 4: {
