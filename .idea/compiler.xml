@@ -10,5 +10,8 @@
         <module name="ATM" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ATMProject" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

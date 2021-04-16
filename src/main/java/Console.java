@@ -76,7 +76,7 @@ public class Console {
                 break;
             }
             case 7: {
-                //closeAccount();
+                UserFunctions.deleteUserAccount();
                 break;
             }
             case 8: {
@@ -134,11 +134,13 @@ public class Console {
                 int inputOnCheckingAccountMenu = atmScanner.nextInt();
                 switch (inputOnCheckingAccountMenu) {
                     case 1: {
+                        System.out.println("Enter amount to withdraw:");
                         UsersArrayList.get(i).getChecking().withdraw(atmScanner.nextDouble());
                         checkingAccountMenu();
                         break;
                     }
                     case 2: {
+                        System.out.println("Enter amount to deposit:");
                         UsersArrayList.get(i).getChecking().deposit(atmScanner.nextDouble());
                         checkingAccountMenu();
                         break;
@@ -183,11 +185,13 @@ public class Console {
                 int inputOnSavingsAccountMenu = atmScanner.nextInt();
                 switch (inputOnSavingsAccountMenu) {
                     case 1: {
+                        System.out.println("Enter amount to withdraw:");
                         UsersArrayList.get(i).getSavings().withdraw(atmScanner.nextDouble());
                         savingsAccountMenu();
                         break;
                     }
                     case 2: {
+                        System.out.println("Enter amount to deposit:");
                         UsersArrayList.get(i).getSavings().deposit(atmScanner.nextDouble());
                         savingsAccountMenu();
                         break;
@@ -232,11 +236,13 @@ public class Console {
                 int inputOnInvestmentAccountMenu = atmScanner.nextInt();
                 switch (inputOnInvestmentAccountMenu) {
                     case 1: {
+                        System.out.println("Enter amount to withdraw:");
                         UsersArrayList.get(i).getInvestment().withdraw(atmScanner.nextDouble());
                         investmentAccountMenu();
                         break;
                     }
                     case 2: {
+                        System.out.println("Enter amount to deposit:");
                         UsersArrayList.get(i).getInvestment().deposit(atmScanner.nextDouble());
                         investmentAccountMenu();
                         break;
