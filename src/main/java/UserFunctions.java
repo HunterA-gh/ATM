@@ -119,6 +119,40 @@ public class UserFunctions {
     public static ArrayList<User> getUserArrayList() {
         return userArrayList;
     }
+    public static void deleteUserAccount() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Are you sure you want to delete your account");
+        System.out.printf("%5s-%5s\n", "[1] ", " Yes");
+        System.out.printf("%5s-%5s\n", "[2] ", " No");
+        int userInput = scanner.nextInt();
+        if (userInput == 2) {
+            Console.afterLogIntoExistingUserProfile();
+        }
+        if (userInput == 1) {
+            System.out.println("What is your password");
+            String password = scanner.next();
+            for (User u : userArrayList) {
+                if (password.equals(u.getPassword())) {
+                    userArrayList.remove(u);
+                    System.out.println("Account Deleted");
+                    Console.afterLogIntoExistingUserProfile();
+                    return;
+                }
+            }
+        }
+        String password = scanner.nextLine();
+        for (User u : userArrayList) {
+            while (password != u.getPassword()) {
+                System.out.println("Sorry passwords do not match. Try again.");
+                String password2 = scanner.nextLine();
+                if (password2.equals(u.getPassword())) {
+                    userArrayList.remove(u);
+                    System.out.println("Your account has been deleted. Goodbye.");
+                    Console.afterLogIntoExistingUserProfile();
+                }
+            }
+        }
+    }
 }
 
 

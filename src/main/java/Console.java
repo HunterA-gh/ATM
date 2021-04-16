@@ -75,7 +75,7 @@ public class Console {
                 break;
             }
             case 7: {
-                //closeAccount();
+                UserFunctions.deleteUserAccount();
                 break;
             }
             case 8: {
