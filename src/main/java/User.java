@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class User {
     private String username;
     private String password;
@@ -50,6 +52,28 @@ public class User {
 
     public void setChecking(Checking checking) {
         this.checking = checking;
+    }
+
+    public void transferFromChecking() {
+        System.out.println("Enter number to transfer");
+        System.out.printf("%5s-%5s\n", "[1] ", "Savings");
+        System.out.printf("%5s-%5s\n", "[2] ", "Investment");
+        Scanner transferScan = new Scanner(System.in);
+        int choice = transferScan.nextInt();
+        System.out.println("Enter amount to transfer");
+        double amount = transferScan.nextDouble();
+        switch(choice){
+            case 1:
+                this.checking.withdraw(amount);
+                this.savings.deposit(amount);
+                break;
+            case 2:
+                this.checking.withdraw(amount);
+                this.investment.deposit(amount);
+            default:
+                System.out.println("Invalid account number");
+        }
+        System.out.println(amount+" transferred");
     }
 
 }

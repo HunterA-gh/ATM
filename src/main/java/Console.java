@@ -143,7 +143,7 @@ public class Console {
                         break;
                     }
                     case 3: {
-                        //giveTransfer()
+                        UsersArrayList.get(i).transferFromChecking();
                         break;
                     }
                     case 4: {
