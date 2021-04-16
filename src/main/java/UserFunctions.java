@@ -118,6 +118,7 @@ public class UserFunctions {
         return userArrayList;
     }
 
+
     public static void deleteUserAccount() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Are you sure you want to delete your account");
@@ -159,76 +160,102 @@ public class UserFunctions {
     public static void deleteCheckingAccount() {
         System.out.println("Please enter your username");
         String theSpecificUsername = scanner.next();
-        for(User u : userArrayList){
-            if(u.getUsername().equals(theSpecificUsername)) {
-                if(u.getChecking().getBalance() == 0) {
+        for (User u : userArrayList) {
+            if (u.getUsername().equals(theSpecificUsername)) {
+                if (u.getChecking().getBalance() != 0) {
+                    System.out.println("Your account still has money in it. Please withdraw your remaining balance " + String.format("$%.2f", u.getSavings().getBalance()));
+                    Console.checkingAccountMenu();
+                }
+                if (u.getChecking().getBalance() == 0) {
                     System.out.println("Are you sure you want to delete your account");
                     System.out.printf("%5s-%5s\n", "[1] ", " Yes");
                     System.out.printf("%5s-%5s\n", "[2] ", " No");
                     int userInput = scanner.nextInt();
                     if (userInput == 2) {
                         Console.afterLogIntoExistingUserProfile();
-                    } else if (userInput == 1){
+                    } else if (userInput == 1) {
                         u.setChecking(null);
                         System.out.println("Your account has been deleted.");
                         Console.afterLogIntoExistingUserProfile();
+
                     }
 
                 }
-                }
+
 
             }
-
         }
+
+    }
+
+
+
     public static void deleteInvestmentAccount() {
         System.out.println("Please enter your username");
         String theSpecificUsername = scanner.next();
-        for(User u : userArrayList){
-            if(u.getUsername().equals(theSpecificUsername)) {
-                if(u.getInvestment().getBalance() == 0) {
+        for (User u : userArrayList) {
+            if (u.getUsername().equals(theSpecificUsername)) {
+                if (u.getInvestment().getBalance() != 0) {
+                    System.out.println("Your account still has money in it. Please withdraw your remaining balance " + String.format("$%.2f", u.getSavings().getBalance()));
+                    Console.investmentAccountMenu();
+                }
+                if (u.getInvestment().getBalance() == 0) {
                     System.out.println("Are you sure you want to delete your account");
                     System.out.printf("%5s-%5s\n", "[1] ", " Yes");
                     System.out.printf("%5s-%5s\n", "[2] ", " No");
                     int userInput = scanner.nextInt();
                     if (userInput == 2) {
                         Console.afterLogIntoExistingUserProfile();
-                    } else if (userInput == 1){
+                    } else if (userInput == 1) {
                         u.setInvestment(null);
                         System.out.println("Your account has been deleted.");
                         Console.afterLogIntoExistingUserProfile();
-                    }
-                }
-            }
 
+                    }
+
+                }
+
+
+            }
         }
 
     }
+
+
     public static void deleteSavingsAccount() {
         System.out.println("Please enter your username");
         String theSpecificUsername = scanner.next();
-        for(User u : userArrayList){
-            if(u.getUsername().equals(theSpecificUsername)) {
-                if(u.getSavings().getBalance() == 0) {
+        for (User u : userArrayList) {
+            if (u.getUsername().equals(theSpecificUsername)) {
+                if (u.getSavings().getBalance() != 0) {
+                    System.out.println("Your account still has money in it. Please withdraw your remaining balance " + String.format("$%.2f", u.getSavings().getBalance()));
+                    Console.savingsAccountMenu();
+                }
+                if (u.getSavings().getBalance() == 0) {
                     System.out.println("Are you sure you want to delete your account");
                     System.out.printf("%5s-%5s\n", "[1] ", " Yes");
                     System.out.printf("%5s-%5s\n", "[2] ", " No");
                     int userInput = scanner.nextInt();
                     if (userInput == 2) {
                         Console.afterLogIntoExistingUserProfile();
-                    } else if (userInput == 1){
-                        u.setSavings(null);
-                        System.out.println("Your account has been deleted.");
-                        Console.afterLogIntoExistingUserProfile();
+                    } else if (userInput == 1) {
+                                u.setSavings(null);
+                                System.out.println("Your account has been deleted.");
+                                Console.afterLogIntoExistingUserProfile();
+
+                            }
+
+                        }
+
+
                     }
                 }
+
             }
 
         }
 
-    }
 
-
-    }
 
 
 

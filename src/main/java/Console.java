@@ -75,7 +75,7 @@ public class Console {
                 break;
             }
             case 7: {
-                //closeAccount();
+                UserFunctions.deleteUserAccount();
                 break;
             }
             case 8: {
@@ -134,17 +134,20 @@ public class Console {
                 int inputOnCheckingAccountMenu = atmScanner.nextInt();
                 switch (inputOnCheckingAccountMenu) {
                     case 1: {
+                        System.out.println("Enter amount to withdraw:");
                         UsersArrayList.get(i).getChecking().withdraw(atmScanner.nextDouble());
                         checkingAccountMenu();
                         break;
                     }
                     case 2: {
+                        System.out.println("Enter amount to deposit:");
                         UsersArrayList.get(i).getChecking().deposit(atmScanner.nextDouble());
                         checkingAccountMenu();
                         break;
                     }
                     case 3: {
                         UsersArrayList.get(i).transferFromChecking();
+                        checkingAccountMenu();
                         break;
                     }
                     case 4: {
@@ -162,6 +165,7 @@ public class Console {
                     }
                     case 7: {
                         UserFunctions.deleteCheckingAccount();
+                        break;
                     }
                 }
             }
@@ -186,22 +190,25 @@ public class Console {
                 int inputOnSavingsAccountMenu = atmScanner.nextInt();
                 switch (inputOnSavingsAccountMenu) {
                     case 1: {
+                        System.out.println("Enter amount to withdraw:");
                         UsersArrayList.get(i).getSavings().withdraw(atmScanner.nextDouble());
                         savingsAccountMenu();
                         break;
                     }
                     case 2: {
+                        System.out.println("Enter amount to deposit:");
                         UsersArrayList.get(i).getSavings().deposit(atmScanner.nextDouble());
                         savingsAccountMenu();
                         break;
                     }
                     case 3: {
-                        //giveTransfer()
+                        UsersArrayList.get(i).transferFromSavings();
+                        savingsAccountMenu();
                         break;
                     }
                     case 4: {
                         UsersArrayList.get(i).getSavings().getTransactionHistory();
-
+                        savingsAccountMenu();
                         break;
                     }
                     case 5: {
@@ -214,6 +221,7 @@ public class Console {
                     }
                     case 7: {
                         UserFunctions.deleteSavingsAccount();
+                        break;
                     }
                 }
             }
@@ -238,17 +246,20 @@ public class Console {
                 int inputOnInvestmentAccountMenu = atmScanner.nextInt();
                 switch (inputOnInvestmentAccountMenu) {
                     case 1: {
+                        System.out.println("Enter amount to withdraw:");
                         UsersArrayList.get(i).getInvestment().withdraw(atmScanner.nextDouble());
                         investmentAccountMenu();
                         break;
                     }
                     case 2: {
+                        System.out.println("Enter amount to deposit:");
                         UsersArrayList.get(i).getInvestment().deposit(atmScanner.nextDouble());
                         investmentAccountMenu();
                         break;
                     }
                     case 3: {
-                        //giveTransfer()
+                        UsersArrayList.get(i).transferFromInvestment();
+                        investmentAccountMenu();
                         break;
                     }
                     case 4: {
