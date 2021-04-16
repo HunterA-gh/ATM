@@ -13,12 +13,12 @@ public class UserFunctions {
     public static void logIntoExistingUserProfile() {
         int passwordAttempts = 0;
         System.out.println("Please enter your Username : ");
-        String confirmUsername = scanner.nextLine();
+        String confirmUsername = scanner.next();
         for (User x : userArrayList) {
             if (x.getUsername().equals(confirmUsername)) {
                 int currentUser = userArrayList.indexOf(x);
                 System.out.println("Welcome back " + x.getUsername() + "\n" + "Please enter your password :");
-                String userPassword = scanner.nextLine();
+                String userPassword = scanner.next();
                 if (userPassword.equals(x.getPassword())) {
                     System.out.println("You are now logged into your account");
                     Console.afterLogIntoExistingUserProfile();
@@ -29,7 +29,7 @@ public class UserFunctions {
                         if ((!userPassword.equals(x.getPassword()))) {
                             System.out.println("Sorry passwords do not match. Try again.");
                             passwordAttempts++;
-                            userPassword = scanner.nextLine();
+                            userPassword = scanner.next();
                             } else {
                                 System.out.println("good job bro that's your password");
                                 Console.afterLogIntoExistingUserProfile();
@@ -43,14 +43,14 @@ public class UserFunctions {
 
     public static void createNewUserProfile() {
         System.out.println("Please create a Username");
-        String username = scanner.nextLine();
+        String username = scanner.next();
         //System.out.println("Your username is : " + username);
 
         System.out.println("Please create a new password: ");
-        String password = scanner.nextLine();
+        String password = scanner.next();
         System.out.println("Your Password is : " + password);
         System.out.println("Please re-enter your new password to confirm : ");
-        String confirmPass = scanner.nextLine();
+        String confirmPass = scanner.next();
 
         int count = 0;
 
@@ -58,7 +58,7 @@ public class UserFunctions {
 
             if ((!confirmPass.equals(password))) {
                 System.out.println("Sorry passwords do not match. Try again.");
-                confirmPass = scanner.nextLine();
+                confirmPass = scanner.next();
             } else {
                 System.out.println("Congrats you've successfully made a new Account.");
                 User user = new User(username, password);
@@ -73,7 +73,7 @@ public class UserFunctions {
 
     public static void makeSavingsAccountForUserProfile() {
         System.out.println("whats your password");
-        String thisUsersPassword = scanner.nextLine();
+        String thisUsersPassword = scanner.next();
         for (int i = 0; i < userArrayList.size(); i++) {
             if (userArrayList.get(i).getPassword().equals(thisUsersPassword)) {
                 System.out.println("Please enter an initial deposit amount");
@@ -88,7 +88,7 @@ public class UserFunctions {
 
     public static void makeInvestmentAccountForUserProfile() {
         System.out.println("whats your password");
-        String thisUsersPassword = scanner.nextLine();
+        String thisUsersPassword = scanner.next();
         for (int i = 0; i < userArrayList.size(); i++) {
             if (userArrayList.get(i).getPassword().equals(thisUsersPassword)) {
                 System.out.println("Please enter an initial deposit amount");
@@ -102,7 +102,7 @@ public class UserFunctions {
 
     public static void makeCheckingAccountForUserProfile() {
         System.out.println("whats your password");
-        String thisUsersPassword = scanner.nextLine();
+        String thisUsersPassword = scanner.next();
         for (int i = 0; i < userArrayList.size(); i++) {
             if (userArrayList.get(i).getPassword().equals(thisUsersPassword)) {
                 System.out.println("Please enter an initial deposit amount");

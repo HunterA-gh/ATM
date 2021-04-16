@@ -167,7 +167,7 @@ public class Console {
     public static void savingsAccountMenu() {
         System.out.println("Please enter your password : ");
         Scanner scanner = new Scanner(System.in);
-        String thisPassword = scanner.nextLine();
+        String thisPassword = scanner.next();
         for (int i = 0; i < UsersArrayList.size(); i++) {
             if (UsersArrayList.get(i).getPassword().equals(thisPassword)) {
                 System.out.println("Welcome to your Savings account: " + "What do you want to do?");
@@ -215,7 +215,7 @@ public class Console {
     public static void investmentAccountMenu() {
         System.out.println("Please enter your password : ");
         Scanner scanner = new Scanner(System.in);
-        String thisPassword = scanner.nextLine();
+        String thisPassword = scanner.next();
         for (int i = 0; i < UsersArrayList.size(); i++) {
             if (UsersArrayList.get(i).getPassword().equals(thisPassword)) {
                 System.out.println("Welcome to your Investment account: " + "What do you want to do?");
