@@ -66,6 +66,7 @@ public class Console {
                 checkingAccountMenu();
                 break;
             }
+
             case 5: {
                 savingsAccountMenu();
                 break;
