@@ -8,7 +8,9 @@ public class Checking extends AccountTypes {
     @Override
     public void giveTransfer(int account, double amount) {
         if (account == 2 && getBalance() >= amount) {
+        for(int i=0;i<UserFunctions.getUserArrayList().size();i++){
 
+        }
 
     /*
     @Override

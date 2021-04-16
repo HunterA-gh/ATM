@@ -55,7 +55,7 @@ public class User {
     }
 
     public void transferFromChecking() {
-        System.out.println("Enter number to transfer");
+        System.out.println("Enter number to transfer to");
         System.out.printf("%5s-%5s\n", "[1] ", "Savings");
         System.out.printf("%5s-%5s\n", "[2] ", "Investment");
         Scanner transferScan = new Scanner(System.in);
@@ -64,17 +64,26 @@ public class User {
         double amount = transferScan.nextDouble();
         switch(choice){
             case 1:
-                this.checking.withdraw(amount);
-                this.savings.deposit(amount);
-                break;
+                System.out.println("Enter Password");
+                String passwd = transferScan.nextLine();
+                for(int i=0;i<UserFunctions.getUserArrayList().size();i++){
+                    if (UserFunctions.getUserArrayList().get(i).getPassword() == passwd){
+                        UserFunctions.getUserArrayList().get(i).getChecking().withdraw(amount);
+                        UserFunctions.getUserArrayList().get(i).getSavings().deposit(amount);
+                    }
+
+                }Console.checkingAccountMenu();
+
+
             case 2:
                 this.checking.withdraw(amount);
                 this.investment.deposit(amount);
             default:
-                System.out.println("Invalid account number");
+                System.out.println("Invalid account type");
         }
         System.out.println(amount+" transferred");
     }
+
 
 }
 

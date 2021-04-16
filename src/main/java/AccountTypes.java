@@ -4,7 +4,7 @@ import java.util.Random;
 public abstract class AccountTypes {
     private int accountNumber;
     private double balance;
-    private ArrayList<String> transactionHistory = new ArrayList<String>();
+    private static ArrayList<String> transactionHistory = new ArrayList<String>();
 
     public AccountTypes(double inAccount) {
         this.balance = inAccount;
@@ -12,16 +12,16 @@ public abstract class AccountTypes {
         accountNumber = randNum.nextInt(1000000);
     }
 
-    public boolean withdraw(double amount) {
+
+     public boolean withdraw(double amount) {
         amount = Console.twoDecimalPlaces(amount);
         if(amount > 0) {
-            if(balance >= amount) {
+            if (balance >= amount) {
                 balance -= amount;
                 transactionHistory.add(String.format("Withdrew $%.2f, Account balance $%.2f", amount, balance));
                 return true;
             }
-        }
-        return false;
+        }return false;
     }
 
     public boolean deposit(double amount) {

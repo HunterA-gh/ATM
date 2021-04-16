@@ -133,12 +133,16 @@ public class Console {
                 int inputOnCheckingAccountMenu = atmScanner.nextInt();
                 switch (inputOnCheckingAccountMenu) {
                     case 1: {
-                        UsersArrayList.get(i).getChecking().withdraw(atmScanner.nextDouble());
+                        System.out.println("How much would you like to withdraw?: ");
+                        double initialDeposit = atmScanner.nextDouble();
+                        UsersArrayList.get(i).getChecking().withdraw(initialDeposit);
                         checkingAccountMenu();
                         break;
                     }
                     case 2: {
-                        UsersArrayList.get(i).getChecking().deposit(atmScanner.nextDouble());
+                        System.out.println("How much would like like to deposit?: ");
+                        double initialDeposit = atmScanner.nextDouble();
+                        UsersArrayList.get(i).getChecking().deposit(initialDeposit);
                         checkingAccountMenu();
                         break;
                     }
