@@ -168,6 +168,7 @@ public class Console {
                     case 7: {
                         UserFunctions.deleteCheckingAccount();
                         afterLogIntoExistingUserProfile();
+
                         break;
                     }
                 }
@@ -227,6 +228,7 @@ public class Console {
                     case 7: {
                         UserFunctions.deleteSavingsAccount();
                         afterLogIntoExistingUserProfile();
+
                         break;
                     }
                 }
@@ -287,6 +289,7 @@ public class Console {
                         UserFunctions.deleteInvestmentAccount();
                         afterLogIntoExistingUserProfile();
                         break;
+
                     }
                 }
             }
