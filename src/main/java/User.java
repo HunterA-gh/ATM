@@ -68,6 +68,8 @@ public class User {
                 String passwd = transferScan.nextLine();
                 for(int i=0;i<UserFunctions.getUserArrayList().size();i++){
                     if (UserFunctions.getUserArrayList().get(i).getPassword() == passwd){
+                        Savings newSavings = new Savings(0);
+                        UserFunctions.getUserArrayList().get(i).setSavings(newSavings);
                         UserFunctions.getUserArrayList().get(i).getChecking().withdraw(amount);
                         UserFunctions.getUserArrayList().get(i).getSavings().deposit(amount);
                     }
