@@ -142,7 +142,7 @@ public class UserFunctions {
         }
         String password = scanner.nextLine();
         for (User u : userArrayList) {
-            while (password != u.getPassword()) {
+            while (!password.equals(u.getPassword())) {
                 System.out.println("Sorry passwords do not match. Try again.");
                 String password2 = scanner.nextLine();
                 if (password2.equals(u.getPassword())) {

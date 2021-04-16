@@ -13,6 +13,7 @@ public abstract class AccountTypes {
     }
 
     public boolean withdraw(double amount) {
+        System.out.println("Enter amount to withdraw:");
         amount = Console.twoDecimalPlaces(amount);
         if(amount > 0) {
             if(balance >= amount) {
@@ -25,6 +26,7 @@ public abstract class AccountTypes {
     }
 
     public boolean deposit(double amount) {
+        System.out.println("Enter amount to deposit:");
         amount = Console.twoDecimalPlaces(amount);
         if(amount > 0) {
             balance += amount;
