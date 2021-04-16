@@ -52,6 +52,7 @@ public class Console {
                 return;
             }
             case 2: {
+
                 UserFunctions.makeSavingsAccountForUserProfile();
                 savingsAccountMenu();
                 break;
@@ -132,21 +133,18 @@ public class Console {
                 int inputOnCheckingAccountMenu = atmScanner.nextInt();
                 switch (inputOnCheckingAccountMenu) {
                     case 1: {
-                        System.out.println("How much would you like to withdraw?: ");
-                        double initialDeposit = atmScanner.nextDouble();
-                        UsersArrayList.get(i).getChecking().withdraw(initialDeposit);
+                        UsersArrayList.get(i).getChecking().withdraw(atmScanner.nextDouble());
                         checkingAccountMenu();
                         break;
                     }
                     case 2: {
-                        System.out.println("How much would like like to deposit?: ");
-                        double initialDeposit = atmScanner.nextDouble();
-                        UsersArrayList.get(i).getChecking().deposit(initialDeposit);
+                        UsersArrayList.get(i).getChecking().deposit(atmScanner.nextDouble());
                         checkingAccountMenu();
                         break;
                     }
                     case 3: {
                         UsersArrayList.get(i).transferFromChecking();
+                        checkingAccountMenu();
                         break;
                     }
                     case 4: {
@@ -170,7 +168,7 @@ public class Console {
     public static void savingsAccountMenu() {
         System.out.println("Please enter your password : ");
         Scanner scanner = new Scanner(System.in);
-        String thisPassword = scanner.nextLine();
+        String thisPassword = scanner.next();
         for (int i = 0; i < UsersArrayList.size(); i++) {
             if (UsersArrayList.get(i).getPassword().equals(thisPassword)) {
                 System.out.println("Welcome to your Savings account: " + "What do you want to do?");
@@ -194,13 +192,13 @@ public class Console {
                         break;
                     }
                     case 3: {
-
-                        //giveTransfer()
+                        UsersArrayList.get(i).transferFromSavings();
+                        savingsAccountMenu();
                         break;
                     }
                     case 4: {
                         UsersArrayList.get(i).getSavings().getTransactionHistory();
-
+                        savingsAccountMenu();
                         break;
                     }
                     case 5: {
@@ -219,7 +217,7 @@ public class Console {
     public static void investmentAccountMenu() {
         System.out.println("Please enter your password : ");
         Scanner scanner = new Scanner(System.in);
-        String thisPassword = scanner.nextLine();
+        String thisPassword = scanner.next();
         for (int i = 0; i < UsersArrayList.size(); i++) {
             if (UsersArrayList.get(i).getPassword().equals(thisPassword)) {
                 System.out.println("Welcome to your Investment account: " + "What do you want to do?");
@@ -243,7 +241,8 @@ public class Console {
                         break;
                     }
                     case 3: {
-                        //giveTransfer()
+                        UsersArrayList.get(i).transferFromInvestment();
+                        investmentAccountMenu();
                         break;
                     }
                     case 4: {
