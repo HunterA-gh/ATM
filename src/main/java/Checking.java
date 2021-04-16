@@ -5,14 +5,9 @@ public class Checking extends AccountTypes {
         super(inAccount);
     }
 
-    @Override
-    public void giveTransfer(int account, double amount) {
-        if (account == 2 && getBalance() >= amount) {
-
-
     /*
     @Override
-    public void giveTransfer(String account, double amount){
+    public void giveTransfer(String account, double amount){ //Original transferTo
         if(account == "savings" && getInAccount() >= amount){
             inAccount -= amount;
             //Get Savings
@@ -22,13 +17,5 @@ public class Checking extends AccountTypes {
             System.out.println("Invalid account");
         }
         System.out.println(amount+" hase been transferred to "+account);
-    }
-
-     */
-        }
-
-    }
-    public void printBalance() {
-
-    }
+    }*/
 }
