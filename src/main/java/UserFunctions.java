@@ -165,7 +165,7 @@ public class UserFunctions {
         for (User u : userArrayList) {
             if (u.getUsername().equals(theSpecificUsername)) {
                 if (u.getChecking().getBalance() != 0) {
-                    System.out.println("Your account still has money in it. Please withdraw your remaining balance " + String.format("$%.2f", u.getSavings().getBalance()));
+                    System.out.println("Your account still has money in it. Please withdraw your remaining balance " + String.format("$%.2f", u.getChecking().getBalance()));
                     Console.checkingAccountMenu();
                 }
                 if (u.getChecking().getBalance() == 0) {
@@ -204,7 +204,7 @@ public class UserFunctions {
         for (User u : userArrayList) {
             if (u.getUsername().equals(theSpecificUsername)) {
                 if (u.getInvestment().getBalance() != 0) {
-                    System.out.println("Your account still has money in it. Please withdraw your remaining balance " + String.format("$%.2f", u.getSavings().getBalance()));
+                    System.out.println("Your account still has money in it. Please withdraw your remaining balance " + String.format("$%.2f", u.getInvestment().getBalance()));
                     Console.investmentAccountMenu();
                 }
                 if (u.getInvestment().getBalance() == 0) {
