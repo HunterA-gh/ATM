@@ -1,13 +1,10 @@
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class UserFunctions {
 
     static Scanner scanner = new Scanner(System.in);
-    //private static Map<String, String> users = new HashMap<>();
     private static ArrayList<User> userArrayList = new ArrayList<>();
 
     public static void logIntoExistingUserProfile() {
@@ -81,10 +78,10 @@ public class UserFunctions {
                 Savings savings = new Savings(0.0);
                 userArrayList.get(i).setSavings(savings);
                 savings.deposit(initialDeposit);
+                userArrayList.get(i).getSavings().printBalance();
             }
         }
     }
-
 
     public static void makeInvestmentAccountForUserProfile() {
         System.out.println("whats your password");
@@ -96,6 +93,7 @@ public class UserFunctions {
                 Investment investment = new Investment(0.0);
                 userArrayList.get(i).setInvestment(investment);
                 investment.deposit(initialDeposit);
+                userArrayList.get(i).getInvestment().printBalance();
             }
         }
     }
@@ -110,10 +108,10 @@ public class UserFunctions {
                 Checking checking = new Checking(0.0);
                 userArrayList.get(i).setChecking(checking);
                 checking.deposit(initialDeposit);
+                userArrayList.get(i).getChecking().printBalance();
             }
         }
     }
-
 
 
     public static ArrayList<User> getUserArrayList() {
@@ -154,74 +152,74 @@ public class UserFunctions {
         }
     }
 
-        public static void deleteCheckingAccount () {
-            System.out.println("Please enter your username");
-            String theSpecificUsername = scanner.next();
-            for (User u : userArrayList) {
-                if (u.getUsername().equals(theSpecificUsername)) {
-                    if (u.getChecking().getBalance() == 0) {
-                        System.out.println("Are you sure you want to delete your account");
-                        System.out.printf("%5s-%5s\n", "[1] ", " Yes");
-                        System.out.printf("%5s-%5s\n", "[2] ", " No");
-                        int userInput1 = scanner.nextInt();
-                        if (userInput1 == 2) {
-                            Console.afterLogIntoExistingUserProfile();
-                        } else if (userInput1 == 1) {
-                            u.setChecking(null);
-                            System.out.println("Your account has been deleted.");
-                            Console.afterLogIntoExistingUserProfile();
-                        }
-
+    public static void deleteCheckingAccount () {
+        System.out.println("Please enter your username");
+        String theSpecificUsername = scanner.next();
+        for (User u : userArrayList) {
+            if (u.getUsername().equals(theSpecificUsername)) {
+                if (u.getChecking().getBalance() == 0) {
+                    System.out.println("Are you sure you want to delete your account");
+                    System.out.printf("%5s-%5s\n", "[1] ", " Yes");
+                    System.out.printf("%5s-%5s\n", "[2] ", " No");
+                    int userInput1 = scanner.nextInt();
+                    if (userInput1 == 2) {
+                        Console.afterLogIntoExistingUserProfile();
+                    } else if (userInput1 == 1) {
+                        u.setChecking(null);
+                        System.out.println("Your account has been deleted.");
+                        Console.afterLogIntoExistingUserProfile();
                     }
-                }
 
+                }
             }
 
         }
-        public static void deleteInvestmentAccount () {
-            System.out.println("Please enter your username");
-            String theSpecificUsername = scanner.next();
-            for (User u : userArrayList) {
-                if (u.getUsername().equals(theSpecificUsername)) {
-                    if (u.getInvestment().getBalance() == 0) {
-                        System.out.println("Are you sure you want to delete your account");
-                        System.out.printf("%5s-%5s\n", "[1] ", " Yes");
-                        System.out.printf("%5s-%5s\n", "[2] ", " No");
-                        int userInput = scanner.nextInt();
-                        if (userInput == 2) {
-                            Console.afterLogIntoExistingUserProfile();
-                        } else if (userInput == 1) {
-                            u.setInvestment(null);
-                            System.out.println("Your account has been deleted.");
-                            Console.afterLogIntoExistingUserProfile();
-                        }
-                    }
-                }
 
-            }
-
-        }
-        public static void deleteSavingsAccount () {
-            System.out.println("Please enter your username");
-            String theSpecificUsername = scanner.next();
-            for (User u : userArrayList) {
-                if (u.getUsername().equals(theSpecificUsername)) {
-                    if (u.getSavings().getBalance() == 0) {
-                        System.out.println("Are you sure you want to delete your account");
-                        System.out.printf("%5s-%5s\n", "[1] ", " Yes");
-                        System.out.printf("%5s-%5s\n", "[2] ", " No");
-                        int userInput = scanner.nextInt();
-                        if (userInput == 2) {
-                            Console.afterLogIntoExistingUserProfile();
-                        } else if (userInput == 1) {
-                            u.setSavings(null);
-                            System.out.println("Your account has been deleted.");
-                            Console.afterLogIntoExistingUserProfile();
-                        }
-                    }
-                }
-
-            }
-
-        }
     }
+    public static void deleteInvestmentAccount () {
+        System.out.println("Please enter your username");
+        String theSpecificUsername = scanner.next();
+        for (User u : userArrayList) {
+            if (u.getUsername().equals(theSpecificUsername)) {
+                if (u.getInvestment().getBalance() == 0) {
+                    System.out.println("Are you sure you want to delete your account");
+                    System.out.printf("%5s-%5s\n", "[1] ", " Yes");
+                    System.out.printf("%5s-%5s\n", "[2] ", " No");
+                    int userInput = scanner.nextInt();
+                    if (userInput == 2) {
+                        Console.afterLogIntoExistingUserProfile();
+                    } else if (userInput == 1) {
+                        u.setInvestment(null);
+                        System.out.println("Your account has been deleted.");
+                        Console.afterLogIntoExistingUserProfile();
+                    }
+                }
+            }
+
+        }
+
+    }
+    public static void deleteSavingsAccount () {
+        System.out.println("Please enter your username");
+        String theSpecificUsername = scanner.next();
+        for (User u : userArrayList) {
+            if (u.getUsername().equals(theSpecificUsername)) {
+                if (u.getSavings().getBalance() == 0) {
+                    System.out.println("Are you sure you want to delete your account");
+                    System.out.printf("%5s-%5s\n", "[1] ", " Yes");
+                    System.out.printf("%5s-%5s\n", "[2] ", " No");
+                    int userInput = scanner.nextInt();
+                    if (userInput == 2) {
+                        Console.afterLogIntoExistingUserProfile();
+                    } else if (userInput == 1) {
+                        u.setSavings(null);
+                        System.out.println("Your account has been deleted.");
+                        Console.afterLogIntoExistingUserProfile();
+                    }
+                }
+            }
+
+        }
+
+    }
+}
