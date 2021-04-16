@@ -144,7 +144,7 @@ public class UserFunctions {
         String password = scanner.nextLine();
         for (User u : userArrayList) {
             while (password != u.getPassword()) {
-                System.out.println("Sorry passwords do not match. Try again.");
+                System.out.println("Sorry passwords do not match. Try2 again.");
                 String password2 = scanner.nextLine();
                 // password = scanner.nextLine();
                 if (password2.equals(u.getPassword())) {
@@ -156,27 +156,6 @@ public class UserFunctions {
         }
     }
 
-    /*
-        public static void deleteTypeOfAccount() {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Are you sure you want to delete your account");
-            System.out.printf("%5s-%5s\n", "[1] ", " Yes");
-            System.out.printf("%5s-%5s\n", "[2] ", " No");
-            int userInput = scanner.nextInt();
-            if (userInput == 2) {
-                Console.afterLogIntoExistingUserProfile();
-            }
-            if (userInput == 1) {
-                for (User u : userArrayList) {
-                    u.setChecking(null);
-                    System.out.println("checking was null");
-                    //System.out.println("Your account has been deleted.");
-                    //Console.afterLogIntoExistingUserProfile();
-                }
-                return;
-            }
-        }
-    */
     public static void deleteCheckingAccount() {
         System.out.println("Please enter your username");
         String theSpecificUsername = scanner.next();
@@ -253,20 +232,4 @@ public class UserFunctions {
 
 
 
-//public static Investment makeAccountInvestmentAccount(Users newUser,){
-//    System.out.println("How much do you want to deposit?");
-//            Scanner userInput = new Scanner(System.in);
-//
-//}
-
-
-//        if (password.equals(confirmPass)) {
-//            System.out.println("Thank you for confirming. Your new Password: " + confirmPass);
-//        } else {
-//            while (password.equals(confirmPass) == false) {
-//
-//            }
-//            System.out.println("Error. Passwords do not match. Please try again.");
-//            // call the method to put in a password again
-//        }
 
