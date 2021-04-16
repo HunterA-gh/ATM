@@ -152,8 +152,9 @@ public class UserFunctions {
                 }
             }
         }
+    }
         
-            public static void deleteCheckingAccount() {
+            public static void deleteCheckingAccount(){
         System.out.println("Please enter your username");
         String theSpecificUsername = scanner.next();
         for(User u : userArrayList){
@@ -162,10 +163,10 @@ public class UserFunctions {
                     System.out.println("Are you sure you want to delete your account");
                     System.out.printf("%5s-%5s\n", "[1] ", " Yes");
                     System.out.printf("%5s-%5s\n", "[2] ", " No");
-                    int userInput = scanner.nextInt();
-                    if (userInput == 2) {
+                    int userInput1 = scanner.nextInt();
+                    if (userInput1 == 2) {
                         Console.afterLogIntoExistingUserProfile();
-                    } else if (userInput == 1){
+                    } else if (userInput1 == 1){
                         u.setChecking(null);
                         System.out.println("Your account has been deleted.");
                         Console.afterLogIntoExistingUserProfile();
@@ -186,10 +187,10 @@ public class UserFunctions {
                     System.out.println("Are you sure you want to delete your account");
                     System.out.printf("%5s-%5s\n", "[1] ", " Yes");
                     System.out.printf("%5s-%5s\n", "[2] ", " No");
-                    int userInput = scanner.nextInt();
-                    if (userInput == 2) {
+                    int userInput1 = scanner.nextInt();
+                    if (userInput1 == 2) {
                         Console.afterLogIntoExistingUserProfile();
-                    } else if (userInput == 1){
+                    } else if (userInput1 == 1){
                         u.setInvestment(null);
                         System.out.println("Your account has been deleted.");
                         Console.afterLogIntoExistingUserProfile();
@@ -225,4 +226,4 @@ public class UserFunctions {
     }
 
     }
-}
+

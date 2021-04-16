@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -18,6 +19,7 @@ public class Console {
         System.out.printf("%5s-%5s\n", "[2] ", " Create a new account.");
         System.out.print(": ");
         int inputOnHomeScreen = atmScanner.nextInt();
+
         if (inputOnHomeScreen == 1) {
             UserFunctions.logIntoExistingUserProfile();
         }
@@ -25,7 +27,15 @@ public class Console {
             UserFunctions.createNewUserProfile();
             afterCreateNewUserProfileResetScreen();
         }
+
+
+
     }
+
+
+
+
+
 
     public static void afterCreateNewUserProfileResetScreen() {
         bootUpATM();
