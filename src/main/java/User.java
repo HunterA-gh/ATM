@@ -74,7 +74,7 @@ public class User {
                         UserFunctions.getUserArrayList().get(i).getSavings().deposit(amount);
                     }
 
-                }Console.checkingAccountMenu();
+                    }Console.checkingAccountMenu();
 
 
             case 2:
