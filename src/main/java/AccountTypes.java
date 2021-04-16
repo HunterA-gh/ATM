@@ -52,6 +52,7 @@ public abstract class AccountTypes {
         boolean validWithdraw = this.withdraw(amount);
         if(validWithdraw) {
             boolean depositWorked = otherAccount.deposit(amount);
+            transactionHistory.add(String.format("Transferred to $%.2f, Account balance $%.2f", otherAccount, amount));
             return depositWorked;
         }
         return false;
