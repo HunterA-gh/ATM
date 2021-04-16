@@ -147,12 +147,14 @@ public class Console {
                     case 1: {
                         System.out.println("Enter amount to withdraw:");
                         UsersArrayList.get(i).getChecking().withdraw(atmScanner.nextDouble());
+                        UsersArrayList.get(i).getChecking().printBalance();
                         checkingAccountMenu();
                         break;
                     }
                     case 2: {
                         System.out.println("Enter amount to deposit:");
                         UsersArrayList.get(i).getChecking().deposit(atmScanner.nextDouble());
+                        UsersArrayList.get(i).getChecking().printBalance();
                         checkingAccountMenu();
                         break;
                     }
@@ -177,6 +179,7 @@ public class Console {
                     case 7: {
                         UserFunctions.deleteCheckingAccount();
                         afterLogIntoExistingUserProfile();
+
                         break;
                     }
                 }
@@ -204,12 +207,14 @@ public class Console {
                     case 1: {
                         System.out.println("Enter amount to withdraw:");
                         UsersArrayList.get(i).getSavings().withdraw(atmScanner.nextDouble());
+                        UsersArrayList.get(i).getSavings().printBalance();
                         savingsAccountMenu();
                         break;
                     }
                     case 2: {
                         System.out.println("Enter amount to deposit:");
                         UsersArrayList.get(i).getSavings().deposit(atmScanner.nextDouble());
+                        UsersArrayList.get(i).getSavings().printBalance();
                         savingsAccountMenu();
                         break;
                     }
@@ -234,6 +239,7 @@ public class Console {
                     case 7: {
                         UserFunctions.deleteSavingsAccount();
                         afterLogIntoExistingUserProfile();
+
                         break;
                     }
                 }
@@ -261,12 +267,14 @@ public class Console {
                     case 1: {
                         System.out.println("Enter amount to withdraw:");
                         UsersArrayList.get(i).getInvestment().withdraw(atmScanner.nextDouble());
+                        UsersArrayList.get(i).getInvestment().printBalance();
                         investmentAccountMenu();
                         break;
                     }
                     case 2: {
                         System.out.println("Enter amount to deposit:");
                         UsersArrayList.get(i).getInvestment().deposit(atmScanner.nextDouble());
+                        UsersArrayList.get(i).getInvestment().printBalance();
                         investmentAccountMenu();
                         break;
                     }
@@ -292,6 +300,7 @@ public class Console {
                         UserFunctions.deleteInvestmentAccount();
                         afterLogIntoExistingUserProfile();
                         break;
+
                     }
                 }
             }

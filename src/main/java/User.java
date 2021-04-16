@@ -73,7 +73,7 @@ public class User {
             default:
                 System.out.println("Invalid account number");
         }
-        System.out.println(amount +" transferred");
+        System.out.println(String.format("Transferred $%.2f",amount));
     }
 
     public void transferFromSavings() {
@@ -95,7 +95,7 @@ public class User {
             default:
                 System.out.println("Invalid account number");
         }
-        System.out.println(amount+" transferred");
+        System.out.println(String.format("Transferred $%.2f",amount));
     }
 
     public void transferFromInvestment() {
@@ -117,7 +117,7 @@ public class User {
             default:
                 System.out.println("Invalid account number");
         }
-        System.out.println(amount+" transferred");
+        System.out.println(String.format("Transferred $%.2f",amount));
     }
 
 }
