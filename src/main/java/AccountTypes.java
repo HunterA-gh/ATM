@@ -44,10 +44,10 @@ public abstract class AccountTypes {
         System.out.println(String.format("%-11s$%,.2f" , "Balance:" , getBalance()));
     }
 
-    public abstract void giveTransfer(int account, double amount);
+    //public abstract void giveTransfer(int account, double amount);
 
 
-    public boolean transferTo(AccountTypes otherAccount, double amount) {
+    /*public boolean transferTo(AccountTypes otherAccount, double amount) { //Method used in User class
         amount = Console.twoDecimalPlaces(amount);
         boolean validWithdraw = this.withdraw(amount);
         if(validWithdraw) {
@@ -55,7 +55,7 @@ public abstract class AccountTypes {
             return depositWorked;
         }
         return false;
-    }
+    }*/
 
     public String formatTransactionHistory() {
         String output = "";
