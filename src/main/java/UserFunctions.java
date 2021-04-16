@@ -152,24 +152,77 @@ public class UserFunctions {
                 }
             }
         }
+        
+            public static void deleteCheckingAccount() {
+        System.out.println("Please enter your username");
+        String theSpecificUsername = scanner.next();
+        for(User u : userArrayList){
+            if(u.getUsername().equals(theSpecificUsername)) {
+                if(u.getChecking().getBalance() == 0) {
+                    System.out.println("Are you sure you want to delete your account");
+                    System.out.printf("%5s-%5s\n", "[1] ", " Yes");
+                    System.out.printf("%5s-%5s\n", "[2] ", " No");
+                    int userInput = scanner.nextInt();
+                    if (userInput == 2) {
+                        Console.afterLogIntoExistingUserProfile();
+                    } else if (userInput == 1){
+                        u.setChecking(null);
+                        System.out.println("Your account has been deleted.");
+                        Console.afterLogIntoExistingUserProfile();
+                    }
+
+                }
+                }
+
+            }
+
+        }
+    public static void deleteInvestmentAccount() {
+        System.out.println("Please enter your username");
+        String theSpecificUsername = scanner.next();
+        for(User u : userArrayList){
+            if(u.getUsername().equals(theSpecificUsername)) {
+                if(u.getInvestment().getBalance() == 0) {
+                    System.out.println("Are you sure you want to delete your account");
+                    System.out.printf("%5s-%5s\n", "[1] ", " Yes");
+                    System.out.printf("%5s-%5s\n", "[2] ", " No");
+                    int userInput = scanner.nextInt();
+                    if (userInput == 2) {
+                        Console.afterLogIntoExistingUserProfile();
+                    } else if (userInput == 1){
+                        u.setInvestment(null);
+                        System.out.println("Your account has been deleted.");
+                        Console.afterLogIntoExistingUserProfile();
+                    }
+                }
+            }
+
+        }
+
+    }
+    public static void deleteSavingsAccount() {
+        System.out.println("Please enter your username");
+        String theSpecificUsername = scanner.next();
+        for(User u : userArrayList){
+            if(u.getUsername().equals(theSpecificUsername)) {
+                if(u.getSavings().getBalance() == 0) {
+                    System.out.println("Are you sure you want to delete your account");
+                    System.out.printf("%5s-%5s\n", "[1] ", " Yes");
+                    System.out.printf("%5s-%5s\n", "[2] ", " No");
+                    int userInput = scanner.nextInt();
+                    if (userInput == 2) {
+                        Console.afterLogIntoExistingUserProfile();
+                    } else if (userInput == 1){
+                        u.setSavings(null);
+                        System.out.println("Your account has been deleted.");
+                        Console.afterLogIntoExistingUserProfile();
+                    }
+                }
+            }
+
+        }
+
+    }
+
     }
 }
-
-
-//public static Investment makeAccountInvestmentAccount(Users newUser,){
-//    System.out.println("How much do you want to deposit?");
-//            Scanner userInput = new Scanner(System.in);
-//
-//}
-
-
-//        if (password.equals(confirmPass)) {
-//            System.out.println("Thank you for confirming. Your new Password: " + confirmPass);
-//        } else {
-//            while (password.equals(confirmPass) == false) {
-//
-//            }
-//            System.out.println("Error. Passwords do not match. Please try again.");
-//            // call the method to put in a password again
-//        }
-
