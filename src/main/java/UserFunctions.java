@@ -12,14 +12,14 @@ public class UserFunctions {
         System.out.println("Please enter your Username : ");
         String confirmUsername = scanner.next();
         for (User x : userArrayList) {
-            if (x.getUsername().equals(confirmUsername)) {
+            if (x.getUsername().equals(confirmUsername)){
                 int currentUser = userArrayList.indexOf(x);
                 System.out.println("Welcome back " + x.getUsername() + "\n" + "Please enter your password :");
                 String userPassword = scanner.next();
                 if (userPassword.equals(x.getPassword())) {
                     System.out.println("You are now logged into your account");
                     Console.afterLogIntoExistingUserProfile();
-                } else if (!(x.getPassword().equals(userPassword))) {
+                }else if (!(x.getPassword().equals(userPassword))) {
                     System.out.println("Sorry password does not match. Please try again");
                     while (passwordAttempts < 3) {
                         if ((!userPassword.equals(x.getPassword()))) {
@@ -35,6 +35,9 @@ public class UserFunctions {
                 }
             }
         }
+        System.out.println("Please Create an Account:");
+        Console.bootUpATM();
+
     }
 
     public static void createNewUserProfile() {
@@ -131,7 +134,7 @@ public class UserFunctions {
         if (userInput == 1) {
             System.out.println("What is your password");
             String password = scanner.next();
-            // if password is right, remove
+            //aq1 if password is right, remove
             for (User u : userArrayList) {
                 if (password.equals(u.getPassword())) {
                     userArrayList.remove(u);
